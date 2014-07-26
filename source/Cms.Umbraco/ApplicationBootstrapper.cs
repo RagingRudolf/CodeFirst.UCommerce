@@ -14,9 +14,7 @@ namespace RagingRudolf.CodeFirst.UCommerce.Cms.Umbraco
 		{
 			// Load assembly
 			// Refactor into using configuration section or take a default named assembly.
-			var assemblyModel = Assembly.Load("RagingRudolf.CodeFirst.Umbraco.Models");
-
-
+			var assemblyModel = Assembly.Load("RagingRudolf.CodeFirst.UCommerce.Models");
 			var types = assemblyModel
 				.GetUCommerceDefinitions()
 				.Select(t => new DependencyField<Type>(t.Name, t.BaseType.AsDependency(), t))

@@ -13,4 +13,8 @@ packages/UmbracoCms.Core*/
 packages/xmlrpcnet*/
 
 source/Cms.Umbraco/obj*/
+source/Cms.Umbraco/bin*/
 source/Core/obj*/
+source/Core/bin*/
+source/Models/bin*/
+source/Models/obj*/
