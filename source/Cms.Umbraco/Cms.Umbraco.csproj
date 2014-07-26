@@ -155,6 +155,12 @@
     <Reference Include="TidyNet">
       <HintPath>..\..\packages\UmbracoCms.Core.7.1.4\lib\TidyNet.dll</HintPath>
     </Reference>
+    <Reference Include="UCommerce">
+      <HintPath>..\..\libraries\uCommerce 6.1.0.14195\UCommerce.dll</HintPath>
+    </Reference>
+    <Reference Include="UCommerce.Infrastructure">
+      <HintPath>..\..\libraries\uCommerce 6.1.0.14195\UCommerce.Infrastructure.dll</HintPath>
+    </Reference>
     <Reference Include="umbraco">
       <HintPath>..\..\packages\UmbracoCms.Core.7.1.4\lib\umbraco.dll</HintPath>
     </Reference>

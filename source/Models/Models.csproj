@@ -43,6 +43,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Cms.Umbraco\Cms.Umbraco.csproj">
+      <Project>{2d921b67-4762-4d81-b42a-2b94c5846df2}</Project>
+      <Name>Cms.Umbraco</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Core\Core.csproj">
       <Project>{26ac5ce1-d365-483c-b536-b128ec826614}</Project>
       <Name>Core</Name>

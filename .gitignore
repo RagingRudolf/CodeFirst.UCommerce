@@ -2,12 +2,14 @@ _ReSharper.RagingRudolf.CodeFirst.UCommerce*/
 packages/AutoMapper*/
 packages/ClientDependency*/
 packages/HtmlAgilityPack*/
+packages/Iesi.Collections*/
 packages/ImageProcessor*/
 packages/Lucene*/
 packages/Microsoft*/
 packages/MiniProfiler*/
 packages/MySql*/
 packages/Newtonsoft*/
+packages/NHibernate*/
 packages/SharpZipLib*/
 packages/UmbracoCms.Core*/
 packages/xmlrpcnet*/

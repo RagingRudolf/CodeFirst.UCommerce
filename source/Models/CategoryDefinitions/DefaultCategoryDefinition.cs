@@ -2,7 +2,7 @@
 
 namespace RagingRudolf.CodeFirst.UCommerce.Models.CategoryDefinitions
 {
-	[CategoryDefinition]
+	[CategoryDefinition(Name = "Default Category 1", Description = "Description is updated")]
 	public class DefaultCategoryDefinition
 	{
 	}
