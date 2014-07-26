@@ -1,0 +1,16 @@
+_ReSharper.RagingRudolf.CodeFirst.UCommerce*/
+packages/AutoMapper*/
+packages/ClientDependency*/
+packages/HtmlAgilityPack*/
+packages/ImageProcessor*/
+packages/Lucene*/
+packages/Microsoft*/
+packages/MiniProfiler*/
+packages/MySql*/
+packages/Newtonsoft*/
+packages/SharpZipLib*/
+packages/UmbracoCms.Core*/
+packages/xmlrpcnet*/
+
+source/Cms.Umbraco/obj*/
+source/Core/obj*/
