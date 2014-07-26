@@ -59,6 +59,7 @@ namespace RagingRudolf.CodeFirst.UCommerce.Core.Handlers
 				: string.Empty;
 
 			session.Save(definition);
+			session.Flush();
 		}
 	}
 }
