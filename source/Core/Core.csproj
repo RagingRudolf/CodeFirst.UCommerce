@@ -37,12 +37,18 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="UCommerce">
+      <HintPath>..\..\libraries\uCommerce 6.1.0.14195\UCommerce.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\CategoryDefinitionAttribute.cs" />
     <Compile Include="Attributes\UCommerceAttribute.cs" />
     <Compile Include="Extensions\AssemblyExtensions.cs" />
     <Compile Include="Extensions\EnumerationExtensions.cs" />
     <Compile Include="Extensions\TypeExtensions.cs" />
+    <Compile Include="Handlers\CategoryDefinitionHandler.cs" />
+    <Compile Include="Handlers\IHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sorting\DependencyField.cs" />
     <Compile Include="Sorting\TopologicalSort.cs" />

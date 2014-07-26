@@ -1,6 +1,8 @@
-﻿namespace RagingRudolf.CodeFirst.UCommerce.Core.Attributes
+﻿using System;
+
+namespace RagingRudolf.CodeFirst.UCommerce.Core.Attributes
 {
-	public abstract class UCommerceAttribute
+	public abstract class UCommerceAttribute : Attribute
 	{
 		 
 	}
