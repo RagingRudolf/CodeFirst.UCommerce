@@ -18,3 +18,5 @@ source/Core/obj*/
 source/Core/bin*/
 source/Models/bin*/
 source/Models/obj*/
+
+*.suo
