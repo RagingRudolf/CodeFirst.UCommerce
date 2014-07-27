@@ -14,5 +14,21 @@ This framework create definitions in uCommerce by using attributes on POCO class
 At this point there is only one attribute (CategoryDefinitionAttribute) for creating "Category Definitions". My recommendation is to take a look at the Models project which will have examples of all available attributes. 
 With time there will come a complete wiki and guides.
 
+Examples
+--------
+
+**Creating a category definition with a field**
+
+	[CategoryDefinition("Default Category 1", Description = "Description is updated")]
+	public class DefaultCategoryDefinition
+	{
+		[DefinitionField("IsPrimaryCategoryAlt", "Number",
+			Multilingual = true,
+			DisplayOnSite = true,
+			RenderInEditor = true
+		)]
+		public bool IsPrimaryCategory { get; set; }
+	}
+
 This is still under development and is NOT ready for usages yet. Feel free to get inspired
 ==========================================================================================
