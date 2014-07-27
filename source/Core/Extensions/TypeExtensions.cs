@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 
 namespace RagingRudolf.CodeFirst.UCommerce.Core.Extensions
@@ -12,23 +14,25 @@ namespace RagingRudolf.CodeFirst.UCommerce.Core.Extensions
 				: null;
 		}
 
-		public static TAttribute GetAttribute<TAttribute>(this Type type, bool inherit = false)
+		public static TAttribute AssertGetCustomAttribute<TAttribute>(this Type type, bool inherit = false)
 			where TAttribute : Attribute
 		{
-			TAttribute attribute = type.GetCustomAttribute(typeof(TAttribute), inherit) as TAttribute;
-
-			return attribute;
-		}
-
-		public static TAttribute AssertGetAttribute<TAttribute>(this Type type, bool inherit = false)
-			where TAttribute : Attribute
-		{
-			TAttribute attribute = GetAttribute<TAttribute>(type, inherit);
+			var attribute = type.GetCustomAttribute<TAttribute>(inherit);
 
 			if (attribute == null)
 				throw new InvalidOperationException();
 
 			return attribute;
+		}
+
+		public static IEnumerable<PropertyInfo> GetAttributedProperties<TAttribute>(this Type type, bool inherit = false)
+		{
+			var properties = type
+				.GetProperties()
+				.EmptyIfNull()
+				.Where(x => x.IsDefined(typeof (TAttribute), inherit));
+
+			return properties;
 		}
 	}
 }

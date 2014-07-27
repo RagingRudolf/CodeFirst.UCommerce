@@ -2,8 +2,14 @@
 
 namespace RagingRudolf.CodeFirst.UCommerce.Models.CategoryDefinitions
 {
-	[CategoryDefinition(Name = "Default Category 1", Description = "Description is updated")]
+	[CategoryDefinition("Default Category 1", Description = "Description is updated")]
 	public class DefaultCategoryDefinition
 	{
+		[DefinitionField("IsPrimaryCategoryAlt", "Number",
+			Multilingual = true,
+			DisplayOnSite = true,
+			RenderInEditor = true
+		)]
+		public bool IsPrimaryCategory { get; set; }
 	}
 }

@@ -4,6 +4,11 @@ namespace RagingRudolf.CodeFirst.UCommerce.Core.Attributes
 {
 	public abstract class UCommerceAttribute : Attribute
 	{
-		public string Name { get; set; }
+		protected UCommerceAttribute(string name)
+		{
+			Name = name;
+		}
+
+		public string Name { get; protected set; }
 	}
 }

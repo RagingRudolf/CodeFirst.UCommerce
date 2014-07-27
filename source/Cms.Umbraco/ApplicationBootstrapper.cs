@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Reflection;
 using System.Linq;
+
 using RagingRudolf.CodeFirst.UCommerce.Core.Extensions;
 using RagingRudolf.CodeFirst.UCommerce.Core.Handlers;
 using RagingRudolf.CodeFirst.UCommerce.Core.Sorting;
+
 using UCommerce.EntitiesV2;
 using UCommerce.Infrastructure;
+
 using Umbraco.Core;
 
 namespace RagingRudolf.CodeFirst.UCommerce.Cms.Umbraco

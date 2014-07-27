@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Reflection;
 
 using NHibernate;
 
@@ -25,14 +29,25 @@ namespace RagingRudolf.CodeFirst.UCommerce.Core.Handlers
 
 		public void Handle(Type type)
 		{
-			var attribute = type.AssertGetAttribute<CategoryDefinitionAttribute>();
+			ISession session = _provider.GetSession();
+			Definition definition = HandleDefinition(session, type);
+			Definition fieldsAdded = HandleDefinitionTypes(session, type, definition);
 
-			string name = !string.IsNullOrWhiteSpace(attribute.Name)
+			session.SaveOrUpdate(fieldsAdded);
+			session.Flush();
+		}
+
+		private static Definition HandleDefinition(ISession session, Type type)
+		{
+			var attribute = type.AssertGetCustomAttribute<CategoryDefinitionAttribute>();
+
+			string name = attribute.Name.IsNotEmpty()
 				? attribute.Name
 				: type.Name;
-
-			ISession session = _provider.GetSession();
-			var definition = session.QueryOver<Definition>()
+			
+			var definition = session
+				.QueryOver<Definition>()
+				.Fetch(x => x.DefinitionFields).Eager
 				.Where(x => x.Name == name)
 				.SingleOrDefault<Definition>();
 
@@ -54,12 +69,56 @@ namespace RagingRudolf.CodeFirst.UCommerce.Core.Handlers
 			}
 
 			definition.Deleted = false;
-			definition.Description = !string.IsNullOrWhiteSpace(attribute.Description)
+			definition.Description = attribute.Description.IsNotEmpty()
 				? attribute.Description
 				: string.Empty;
 
-			session.Save(definition);
-			session.Flush();
+			return definition;
+		}
+
+		private static Definition HandleDefinitionTypes(ISession session, Type type, Definition definition)
+		{
+			IEnumerable<PropertyInfo> properties = type.GetAttributedProperties<DefinitionFieldAttribute>();
+
+			foreach (var propertyInfo in properties)
+			{
+				var attribute = propertyInfo.AssertGetCustomAttribute<DefinitionFieldAttribute>();
+				string name = attribute.Name.IsNotEmpty()
+					? attribute.Name
+					: propertyInfo.Name;
+
+				var field = definition.DefinitionFields
+					.SingleOrDefault(x => x.Name == name);
+
+				if (field == null)
+				{
+					var dataType = session
+						.QueryOver<DataType>()
+						.Where(x => x.TypeName == attribute.DataType)
+						.SingleOrDefault<DataType>();
+
+					field = new DefinitionField
+					{
+						Name = name,
+						DataType = dataType,
+						Definition = definition
+					};
+
+					if (definition.DefinitionFields == null)
+						definition.DefinitionFields = new Collection<DefinitionField>();
+
+					definition.DefinitionFields.Add(field);
+				}
+
+				field.DisplayOnSite = attribute.DisplayOnSite;
+				field.Multilingual = attribute.Multilingual;
+				field.RenderInEditor = attribute.RenderInEditor;
+				field.Searchable = attribute.Searchable;
+				field.SortOrder = attribute.SortOrder;
+				field.DefaultValue = attribute.DefaultValue;
+			}
+
+			return definition;
 		}
 	}
 }
