@@ -59,7 +59,8 @@ namespace RagingRudolf.CodeFirst.UCommerce.Core.Handlers
 					.SingleOrDefault<DefinitionType>();
 
 				if (categoryDefinitionType == null)
-					throw new InvalidOperationException();
+					throw new InvalidOperationException(
+						string.Format("Could not find definition type 'Category'"));
 
 				definition = new Definition
 				{

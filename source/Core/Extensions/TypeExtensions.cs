@@ -20,7 +20,10 @@ namespace RagingRudolf.CodeFirst.UCommerce.Core.Extensions
 			var attribute = type.GetCustomAttribute<TAttribute>(inherit);
 
 			if (attribute == null)
-				throw new InvalidOperationException();
+				throw new InvalidOperationException(
+					string.Format("Type '{0}' does not have an attribute of type '{1}' attached.", 
+						type.Name, 
+						typeof(TAttribute).Name));
 
 			return attribute;
 		}
@@ -30,7 +33,7 @@ namespace RagingRudolf.CodeFirst.UCommerce.Core.Extensions
 			var properties = type
 				.GetProperties()
 				.EmptyIfNull()
-				.Where(x => x.IsDefined(typeof (TAttribute), inherit));
+				.Where(x => x.IsDefined(typeof(TAttribute), inherit));
 
 			return properties;
 		}

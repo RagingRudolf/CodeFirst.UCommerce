@@ -11,7 +11,10 @@ namespace RagingRudolf.CodeFirst.UCommerce.Core.Extensions
 			var attribute = propertyInfo.GetCustomAttribute<TAttribute>();
 
 			if (attribute == null)
-				throw new InvalidOperationException();
+				throw new InvalidOperationException(
+					string.Format("Property '{0}' doesn't have attribute of type '{1}' attached.", 
+						propertyInfo.Name, 
+						typeof(TAttribute).Name));
 
 			return attribute;
 		}
