@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Linq;
 
+using RagingRudolf.CodeFirst.UCommerce.Core.Configuration;
 using RagingRudolf.CodeFirst.UCommerce.Core.Extensions;
 using RagingRudolf.CodeFirst.UCommerce.Core.Handlers;
 using RagingRudolf.CodeFirst.UCommerce.Core.Sorting;
@@ -18,12 +19,15 @@ namespace RagingRudolf.CodeFirst.UCommerce.Cms.Umbraco
 	{
 		protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
 		{
-			var provider = ObjectFactory.Instance.Resolve<ISessionProvider>();
+			var sessionProvider = ObjectFactory.Instance.Resolve<ISessionProvider>();
 			
 			IHandler[] handlers =
 			{
-				new CategoryDefinitionHandler(provider), 
+				new CategoryDefinitionHandler(sessionProvider), 
 			};
+
+			//IConfigurationProvider configurationProvider = new ConfigurationProvider();
+			//var assemblies = configurationProvider.GetAssemblies();
 
 			// Load assembly
 			// Refactor into using configuration section or take a default named assembly.
