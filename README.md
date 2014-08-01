@@ -25,6 +25,20 @@ This framework create definitions in uCommerce by using attributes on POCO class
 At this point there is only one attribute (CategoryDefinitionAttribute) for creating "Category Definitions". My recommendation is to take a look at the Models project which will have examples of all available attributes. 
 With time there will come a complete wiki and guides.
 
+Configuration
+-------------
+
+Add following to your web.config/app.config. AssemblyName is the name where CodeFirst.UCommerce should look for POCOs. If configuration section is not defined CodeFirst.UCommmerce will look for POCOs in a assembly named "RagingRudolf.CodeFirst.UCommerce.Models".
+
+	<sectionGroup name="RagingRudolf">
+		<section name="CodeFirst" type="RagingRudolf.CodeFirst.UCommerce.Core.Configuration.CodeFirstConfiguration" />
+	</sectionGroup>
+
+	<RagingRudolf>
+		<CodeFirst assemblyname="RagingRudolf.CodeFirst.UCommerce.Models" />
+	</RagingRudolf>
+
+
 Examples
 --------
 
