@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Configuration;
 using System.Reflection;
+using RagingRudolf.CodeFirst.UCommerce.Core.Extensions;
 
 namespace RagingRudolf.CodeFirst.UCommerce.Core.Configuration
 {
@@ -13,25 +14,14 @@ namespace RagingRudolf.CodeFirst.UCommerce.Core.Configuration
 			_configuration = ConfigurationManager.GetSection("RagingRudolf/CodeFirst") as CodeFirstConfiguration;
 		}
 
-		public IEnumerable<Assembly> GetAssemblies()
+		public Assembly GetAssembly()
 		{
-			IList<Assembly> loadedAssemblies = new List<Assembly>();
-			
-			if (_configuration == null)
-			{
-				var assembly = Assembly.Load("RagingRudolf.CodeFirst.UCommerce.Models");
-				loadedAssemblies.Add(assembly);
-			}
-			else
-			{
-				foreach (AssemblyElement item in _configuration.Assemblies)
-				{
-					var assembly = Assembly.Load(item.AssemblyString);
-					loadedAssemblies.Add(assembly);
-				}
-			}
+			string assemblyName = _configuration != null && _configuration.AssemblyName.IsNotEmpty()
+				? _configuration.AssemblyName
+				: "RagingRudolf.CodeFirst.UCommerce.Models";
+			var assembly = Assembly.Load(assemblyName);
 
-			return loadedAssemblies;
+			return assembly;
 		}
 	}
 }

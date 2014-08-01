@@ -52,8 +52,6 @@
     <Compile Include="Attributes\CategoryDefinitionAttribute.cs" />
     <Compile Include="Attributes\DefinitionFieldAttribute.cs" />
     <Compile Include="Attributes\UCommerceAttribute.cs" />
-    <Compile Include="Configuration\AssemblyElement.cs" />
-    <Compile Include="Configuration\AssemblyElementCollection.cs" />
     <Compile Include="Configuration\CodeFirstConfiguration.cs" />
     <Compile Include="Configuration\ConfigurationProvider.cs" />
     <Compile Include="Configuration\IConfigurationProvider.cs" />

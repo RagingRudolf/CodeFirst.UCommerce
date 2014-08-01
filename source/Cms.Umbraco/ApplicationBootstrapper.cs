@@ -26,13 +26,9 @@ namespace RagingRudolf.CodeFirst.UCommerce.Cms.Umbraco
 				new CategoryDefinitionHandler(sessionProvider), 
 			};
 
-			//IConfigurationProvider configurationProvider = new ConfigurationProvider();
-			//var assemblies = configurationProvider.GetAssemblies();
-
-			// Load assembly
-			// Refactor into using configuration section or take a default named assembly.
-			var assemblyModel = Assembly.Load("RagingRudolf.CodeFirst.UCommerce.Models");
-			var types = assemblyModel
+			IConfigurationProvider configurationProvider = new ConfigurationProvider();
+			Assembly assembly = configurationProvider.GetAssembly();
+			List<DependencyField<Type>> types = assembly
 				.GetUCommerceDefinitions()
 				.Select(t => new DependencyField<Type>(t.Name, t.BaseType.AsDependency(), t))
 				.ToList();
@@ -40,7 +36,7 @@ namespace RagingRudolf.CodeFirst.UCommerce.Cms.Umbraco
 
 			foreach (Type type in sorted)
 			{
-				var handler = handlers.FirstOrDefault(x => x.CanHandle(type));
+				IHandler handler = handlers.FirstOrDefault(x => x.CanHandle(type));
 
 				if (handler == null)
 					throw new InvalidOperationException();

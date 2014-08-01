@@ -4,11 +4,11 @@ namespace RagingRudolf.CodeFirst.UCommerce.Core.Configuration
 {
 	public class CodeFirstConfiguration : ConfigurationSection
 	{
-		[ConfigurationProperty("assemblies")]
-		public AssemblyElementCollection Assemblies
+		[ConfigurationProperty("assemblyname", IsRequired = true)]
+		public string AssemblyName
 		{
-			get { return (AssemblyElementCollection) this["assemblies"]; }
-			set { this["assemblies"] = value; }
+			get { return (string) this["assemblyname"]; }
+			set { this["assemblyname"] = value; }
 		}
 	}
 }
