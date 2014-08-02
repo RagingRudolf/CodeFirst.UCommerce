@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Configuration;
+﻿using System.Configuration;
 using System.Reflection;
+
 using RagingRudolf.CodeFirst.UCommerce.Core.Extensions;
 
 namespace RagingRudolf.CodeFirst.UCommerce.Core.Configuration
@@ -22,6 +22,11 @@ namespace RagingRudolf.CodeFirst.UCommerce.Core.Configuration
 			var assembly = Assembly.Load(assemblyName);
 
 			return assembly;
+		}
+
+		public bool Synchronize
+		{
+			get { return _configuration != null && _configuration.Synchronize; }
 		}
 	}
 }

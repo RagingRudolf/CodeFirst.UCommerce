@@ -19,27 +19,32 @@ namespace RagingRudolf.CodeFirst.UCommerce.Cms.Umbraco
 	{
 		protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
 		{
-			var sessionProvider = ObjectFactory.Instance.Resolve<ISessionProvider>();
-			
-			IHandler[] handlers =
-			{
-				new CategoryDefinitionHandler(sessionProvider), 
-			};
-
 			IConfigurationProvider configurationProvider = new ConfigurationProvider();
+
+			if (!configurationProvider.Synchronize)
+				return;
+
 			Assembly assembly = configurationProvider.GetAssembly();
-			List<DependencyField<Type>> types = assembly
+			IList<DependencyField<Type>> types = assembly
 				.GetUCommerceDefinitions()
 				.Select(t => new DependencyField<Type>(t.Name, t.BaseType.AsDependency(), t))
 				.ToList();
 			IEnumerable<Type> sorted = TopologicalSort.Sort(types);
+
+			var sessionProvider = ObjectFactory.Instance.Resolve<ISessionProvider>();
+
+			IHandler[] handlers =
+			{
+				new CategoryDefinitionHandler(sessionProvider), 
+			};
 
 			foreach (Type type in sorted)
 			{
 				IHandler handler = handlers.FirstOrDefault(x => x.CanHandle(type));
 
 				if (handler == null)
-					throw new InvalidOperationException();
+					throw new InvalidOperationException(
+						string.Format("Can not find a handler for type '{0}'", type));
 
 				handler.Handle(type);
 			}

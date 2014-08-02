@@ -35,7 +35,7 @@ Add following to your web.config/app.config. AssemblyName is the name where Code
 	</sectionGroup>
 
 	<RagingRudolf>
-		<CodeFirst assemblyname="RagingRudolf.CodeFirst.UCommerce.Models" />
+		<CodeFirst synchronize="false" assemblyname="RagingRudolf.Examples.Models" />
 	</RagingRudolf>
 
 
