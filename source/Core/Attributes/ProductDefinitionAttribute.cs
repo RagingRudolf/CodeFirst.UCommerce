@@ -3,9 +3,9 @@
 namespace RagingRudolf.CodeFirst.UCommerce.Core.Attributes
 {
 	[AttributeUsage(AttributeTargets.Class, Inherited = true)]
-	public class CategoryDefinitionAttribute : BaseDefinitionAttribute
+	public class ProductDefinitionAttribute : BaseDefinitionAttribute
 	{
-		public CategoryDefinitionAttribute(string name) 
+		public ProductDefinitionAttribute(string name) 
 			: base(name)
 		{
 		}

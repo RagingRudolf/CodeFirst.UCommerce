@@ -5,7 +5,7 @@ namespace RagingRudolf.Examples.Models.CategoryDefinitions
 	[CategoryDefinition("Default Category 1", Description = "Description is updated")]
 	public class DefaultCategoryDefinition
 	{
-		[DefinitionField("IsPrimaryCategoryAlt", "Number",
+		[CategoryDefinitionField("IsPrimaryCategoryAlt", "Number",
 			Multilingual = true,
 			DisplayOnSite = true,
 			RenderInEditor = true

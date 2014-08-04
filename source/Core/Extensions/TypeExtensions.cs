@@ -7,13 +7,6 @@ namespace RagingRudolf.CodeFirst.UCommerce.Core.Extensions
 {
 	public static class TypeExtensions
 	{
-		public static string[] AsDependency(this Type type)
-		{
-			return type != null && type != typeof(Object)
-				? new[] { type.Name }
-				: null;
-		}
-
 		public static TAttribute AssertGetCustomAttribute<TAttribute>(this Type type, bool inherit = false)
 			where TAttribute : Attribute
 		{
