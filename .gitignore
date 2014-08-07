@@ -22,3 +22,4 @@ source/Models/bin*/
 source/Models/obj*/
 
 *.suo
+source/Core/Core.csproj.user

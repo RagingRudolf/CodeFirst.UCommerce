@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>CodeFirst.UCommerce</title>
+    <authors>RagingRudolf</authors>
+    <owners>RagingRudolf</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Test description</description>
+    <releaseNotes>Release notes.</releaseNotes>
+    <copyright>Copyright 2014</copyright>
+    <tags>codefirst uCommerce</tags>
+  </metadata>
+  <files>
+    <file src="..\..\nuget\web.config.install.xdt" target="content" />
+    <file src="..\..\nuget\web.config.uninstall.xdt" target="content" />
+  </files>
+</package>

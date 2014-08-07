@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+  <configSections xdt:Transform="InsertIfMissing">
+    <sectionGroup name="RagingRudolf" xdt:Transform="InsertIfMissing">
+      <section name="CodeFirst" type="RagingRudolf.CodeFirst.UCommerce.Core.Configuration.CodeFirstConfiguration, RagingRudolf.CodeFirst.UCommerce.Core" />
+    </sectionGroup>
+  </configSections>
+
+  <RagingRudolf xdt:Transform="InsertIfMissing">
+    <CodeFirst assemblyname="YourAssemblyName" synchronize="false" />
+  </RagingRudolf>
+</configuration>

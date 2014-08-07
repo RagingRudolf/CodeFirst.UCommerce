@@ -12,6 +12,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuget", "Nuget", "{0073D88B-1EF8-4202-84EC-C7522F82DB0F}"
+	ProjectSection(SolutionItems) = preProject
+		source\Core\Core.nuspec = source\Core\Core.nuspec
+		nuget\web.config.install.xdt = nuget\web.config.install.xdt
+		nuget\web.config.uninstall.xdt = nuget\web.config.uninstall.xdt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

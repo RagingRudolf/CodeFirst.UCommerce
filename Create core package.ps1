@@ -1,0 +1,1 @@
+nuget pack source\Core\Core.csproj
