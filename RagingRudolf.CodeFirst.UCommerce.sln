@@ -19,6 +19,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuget", "Nuget", "{0073D88B
 		nuget\web.config.uninstall.xdt = nuget\web.config.uninstall.xdt
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Powershell", "Powershell", "{0D164B8A-FE4D-4FF9-9A70-1BA46B971DBC}"
+	ProjectSection(SolutionItems) = preProject
+		Create core package.ps1 = Create core package.ps1
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
