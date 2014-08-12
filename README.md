@@ -1,59 +1,70 @@
-A code first framework for uCommmerce
-=====================================
-
-Introduction
-------------
-
-In big projects where you have several environments it is time consuming to navigate inside uCommerce user interface to "click & point" for creating uCommerce definitions (category definitions, product definitions so forth).
-This framework will help you making deployment throughout several environment easier as you only have to create your definitions as POCOs and then the framework will making sure that definitions will be created or updated.
-
-Requirements
-------------
-
-Umbraco: 7.1.4
-
-uCommerce: 6.1.0.14195
-
-These versions are currently used for development. This is not the same as it doesn't work with older versions. I know  uCommerce API is not changing a lot and I use the low level API access (going directly on database on NHibernate) so it "should" be working with older versions of uCommerce, though I haven't tested more than the development version as this point. 
-The same goes for Umbraco version. The only thing I use from Umbraco is ApplicationEventHandler and if this is available in older versions of Umbraco it should work as well (I recall that Umbraco 6 uses that as well).
+# CodeFirst for uCommmerce  
 
 
-Usage
------
+CodeFirst for uCommerce is a framework which aims for helping developers deploying their uCommerce solution to other environments. Example you have been working in your development environment for the last 3 months and you are ready for first deployment to your customer's test environment.
 
-This framework create definitions in uCommerce by using attributes on POCO classes.
-At this point there is only one attribute (CategoryDefinitionAttribute) for creating "Category Definitions". My recommendation is to take a look at the Models project which will have examples of all available attributes. 
-With time there will come a complete wiki and guides.
+In normal cases when you have deployed your uCommerce solution you start creating changes to your category definitions or product definitions. First time you deploy you can just do a database copy but what about the second or third time?
 
-Configuration
--------------
+CodeFirst for uCommerce tries to eliminate the process of creating definitions manually after a deployment by creating definitions for you.
 
-Add following to your web.config/app.config. AssemblyName is the name where CodeFirst.UCommerce should look for POCOs. If configuration section is not defined CodeFirst.UCommmerce will look for POCOs in a assembly named "RagingRudolf.CodeFirst.UCommerce.Models".
+Don't know what uCommerce is? uCommerce is a e-commerce platform build on .NET. You can find more information about it [here](http://www.ucommerce.net/ "uCommerce")
+
+
+## Requirements
+
+CodeFirst for uCommerce requires your solution running uCommerce 6.1.0.14195 at this point. Support for older versions of uCommerce will not officially be supported. But you're welcome to contribute so it can!
+
+
+## Installing
+
+
+Currently you have to get the source code and compile it yourself. This will change in near future. The plan is to make a Nuget package which is easily installed into almost every solution.
+
+For time being you have to compile source yourself and reference RagingRudolf.CodeFirst.UCommerce.Core. When you have referenced your assembly add the following configuration sections to your web/app.config.
 
 	<sectionGroup name="RagingRudolf">
 		<section name="CodeFirst" type="RagingRudolf.CodeFirst.UCommerce.Core.Configuration.CodeFirstConfiguration" />
 	</sectionGroup>
 
 	<RagingRudolf>
-		<CodeFirst synchronize="false" assemblyname="RagingRudolf.Examples.Models" />
+		<CodeFirst synchronize="<# true/false #>" assemblyname="<# AssemblyName #>" />
 	</RagingRudolf>
 
+Replace the value in between <# #> according to your project.
 
-Examples
---------
+synchronize: Tells CodeFirst whether it should synchronize definitions.
 
-**Creating a category definition with a field**
+assemblyname: In which assembly should CodeFirst be looking for definitions?
+
+### Initializing CodeFirst in Umbraco 6/7
+
+Initializing CodeFirst for uCommerce is very easy. Create a new class which inherits from ApplicationEventHandler in Umbraco and call CodeFirstBootstrapper.Initialize() and you're good to go.
+Example:
+
+	public class UmbracoEventHandler : ApplicationEventHandler
+	{
+		protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
+		{
+			CodeFirstBootstrapper.Initialize();
+		}
+	}
+
+## My first definition
+
+Creating definitions with CodeFirst for uCommerce is simple and I will be working on keeping it that way! The basics are that you mark a class with an attribute that you wish should be a definition and mark properties with an attribute as well if you want being created as properties for your definition. In the example below we will create a category definition with a property:
 
 	[CategoryDefinition("Default Category 1", Description = "Description is updated")]
 	public class DefaultCategoryDefinition
 	{
 		[DefinitionField("IsPrimaryCategoryAlt", "Number",
-			Multilingual = true,
 			DisplayOnSite = true,
 			RenderInEditor = true
 		)]
 		public bool IsPrimaryCategory { get; set; }
 	}
 
-This is still under development and is NOT ready for usages yet. Feel free to get inspired
-==========================================================================================
+## The future
+
+I have a lot of plans but it will take time to execute them all. Currently I'm working on getting the first Nuget package created and getting out there. Right after that I will be working on getting better multilingual support. Currently you can choose to make a property multilingual but you don't have the posibility to give it a name for a certain language. And last one will be coming slowly, tests! When you start using it there might show up some hidden features I need to kill. 
+
+Happy coding!
