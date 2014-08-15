@@ -1,26 +1,36 @@
 # CodeFirst for uCommmerce  
 
 
-CodeFirst for uCommerce is a framework which aims for helping developers deploying their uCommerce solution to other environments. Example you have been working in your development environment for the last 3 months and you are ready for first deployment to your customer's test environment.
+CodeFirst for uCommerce is a framework which aims for helping developers deploying their uCommerce solution to other environments. 
+Example you have been working in your development environment for the last 3 months and you are ready for first deployment to your customer's test environment.
 
-In normal cases when you have deployed your uCommerce solution you start creating changes to your category definitions or product definitions. First time you deploy you can just do a database copy but what about the second or third time?
+In normal cases when you have deployed your uCommerce solution you start creating changes to your category definitions or product definitions. 
+First time you deploy you can just do a database copy but what about the second or third time?
 
 CodeFirst for uCommerce tries to eliminate the process of creating definitions manually after a deployment by creating definitions for you.
 
-Don't know what uCommerce is? uCommerce is a e-commerce platform build on .NET. You can find more information about it [here](http://www.ucommerce.net/ "uCommerce")
+Don't know what uCommerce is? 
+uCommerce is a e-commerce platform build on .NET. 
+You can find more information about it [here](http://www.ucommerce.net/ "uCommerce")
 
 
 ## Requirements
 
-CodeFirst for uCommerce requires your solution running uCommerce 6.1.0.14195 at this point. Support for older versions of uCommerce will not officially be supported. But you're welcome to contribute so it can!
+CodeFirst for uCommerce requires your solution running uCommerce 6.1.0.14195 at this point. 
+Support for older versions of uCommerce will not officially be supported. 
+But you're welcome to contribute so it can!
 
 
 ## Installing
 
+A nuget package is now available at [nuget.org](http://www.nuget.org/packages/RagingRudolf.CodeFirst.UCommerce.Core/ "Nuget"). 
+You can install it with using Package Manager Console by running command
 
-Currently you have to get the source code and compile it yourself. This will change in near future. The plan is to make a Nuget package which is easily installed into almost every solution.
+	Install-Package RagingRudolf.CodeFirst.UCommerce.Core
 
-For time being you have to compile source yourself and reference RagingRudolf.CodeFirst.UCommerce.Core. When you have referenced your assembly add the following configuration sections to your web/app.config.
+Or if you are looking at a feature which is not available in nuget yet you can download the source code and compile a version yourself.
+
+If you compile your code yourself you have to reference RagingRudolf.CodeFirst.UCommerce.Core and add the following configuration sections to your web/app.config.
 
 	<sectionGroup name="RagingRudolf">
 		<section name="CodeFirst" type="RagingRudolf.CodeFirst.UCommerce.Core.Configuration.CodeFirstConfiguration" />
