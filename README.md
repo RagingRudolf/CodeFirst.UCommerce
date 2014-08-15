@@ -56,12 +56,26 @@ Creating definitions with CodeFirst for uCommerce is simple and I will be workin
 	[CategoryDefinition("Default Category 1", Description = "Description is updated")]
 	public class DefaultCategoryDefinition
 	{
-		[DefinitionField("IsPrimaryCategoryAlt", "Number",
-			DisplayOnSite = true,
-			RenderInEditor = true
-		)]
+		[DefinitionField("IsPrimaryCategoryAlt", "Number", DisplayOnSite = true, RenderInEditor = true)]
 		public bool IsPrimaryCategory { get; set; }
 	}
+
+## Creating descriptions for multiple languages
+
+Now we have create a basic category definition and that is quite fine. Though now a customer want to support multiple languages so our definition needs some descriptions for each language. 
+Defining a description and display name for a language is done by setting a LanguageDescription attribute on a property on your definition. For each language you want to give a description you create a LanguageDescription attribute. 
+
+Below can you see how it will look like if we use our code from before.
+
+	[CategoryDefinition("Default Category 1", Description = "Description is updated")]
+	public class DefaultCategoryDefinition
+	{
+		[CategoryDefinitionField("IsPrimaryCategoryAlt", "Number", Multilingual = true, DisplayOnSite = true, RenderInEditor = true)]
+		[LanguageDescription("en-US", "Primary category", Description = "This is primary category for a product.")]
+		[LanguageDescription("da-DK", "Primær kategori", Description = "Dette er den primære kategori for et produkt.")]
+		public bool IsPrimaryCategory { get; set; }
+	}
+
 
 ## The future
 
