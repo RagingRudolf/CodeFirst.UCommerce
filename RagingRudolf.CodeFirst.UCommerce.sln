@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Powershell", "Powershell", 
 		Create core package.ps1 = Create core package.ps1
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "source\Tests\Tests.csproj", "{A3CDC85C-6AD8-4172-8F8F-FE41682ADDA2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{E2E58D89-FCBF-4DF8-AB37-F526FCBECC5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2E58D89-FCBF-4DF8-AB37-F526FCBECC5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2E58D89-FCBF-4DF8-AB37-F526FCBECC5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3CDC85C-6AD8-4172-8F8F-FE41682ADDA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3CDC85C-6AD8-4172-8F8F-FE41682ADDA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3CDC85C-6AD8-4172-8F8F-FE41682ADDA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3CDC85C-6AD8-4172-8F8F-FE41682ADDA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

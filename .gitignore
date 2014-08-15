@@ -13,6 +13,7 @@ packages/NHibernate*/
 packages/SharpZipLib*/
 packages/UmbracoCms.Core*/
 packages/xmlrpcnet*/
+packages/NUnit*/
 
 source/Cms.Umbraco/obj*/
 source/Cms.Umbraco/bin*/
@@ -20,6 +21,8 @@ source/Core/obj*/
 source/Core/bin*/
 source/Models/bin*/
 source/Models/obj*/
+source/Tests/obj*/
+source/Tests/bin*/
 
 *.suo
-source/Core/Core.csproj.user
+*.user
