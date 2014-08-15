@@ -89,6 +89,7 @@ Below can you see how it will look like if we use our code from before.
 
 ## The future
 
-I have a lot of plans but it will take time to execute them all. Currently I'm working on getting the first Nuget package created and getting out there. Right after that I will be working on getting better multilingual support. Currently you can choose to make a property multilingual but you don't have the posibility to give it a name for a certain language. And last one will be coming slowly, tests! When you start using it there might show up some hidden features I need to kill. 
+I have a lot of plans but it will take time to execute them all. 
+Next step will be creating some tests for some of the helpers and doing some refactoring to making handlers more simple and more test friendly.
 
 Happy coding!
