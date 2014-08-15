@@ -101,6 +101,28 @@ namespace RagingRudolf.CodeFirst.UCommerce.Core.Handlers
 				field.SortOrder = attribute.SortOrder;
 				field.Facet = attribute.Facet;
 				field.IsVariantProperty = attribute.IsVariantProperty;
+
+				IEnumerable<LanguageDescriptionAttribute> descriptions = propertyInfo.GetCustomAttributes<LanguageDescriptionAttribute>();
+
+				foreach (var description in descriptions)
+				{
+					ProductDefinitionFieldDescription fieldDescription = field.ProductDefinitionFieldDescriptions
+						.SingleOrDefault(x => x.CultureCode == description.Language);
+
+					if (fieldDescription == null)
+					{
+						fieldDescription = new ProductDefinitionFieldDescription
+						{
+							ProductDefinitionField = field,
+							CultureCode = description.Language,
+						};
+
+						field.AddProductDefinitionFieldDescription(fieldDescription);
+					}
+
+					fieldDescription.DisplayName = description.DisplayName;
+					fieldDescription.Description = description.Description ?? string.Empty;
+				}
 			}
 
 			return definition;

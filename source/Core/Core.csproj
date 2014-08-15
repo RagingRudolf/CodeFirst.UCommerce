@@ -57,6 +57,7 @@
     <Compile Include="Attributes\BaseDefinitionFieldAttribute.cs" />
     <Compile Include="Attributes\CategoryDefinitionAttribute.cs" />
     <Compile Include="Attributes\CategoryDefinitionFieldAttribute.cs" />
+    <Compile Include="Attributes\LanguageDescriptionAttribute.cs" />
     <Compile Include="Attributes\ProductDefinitionAttribute.cs" />
     <Compile Include="Attributes\ProductDefinitionFieldAttribute.cs" />
     <Compile Include="Attributes\UCommerceAttribute.cs" />
