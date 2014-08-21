@@ -51,14 +51,16 @@ namespace RagingRudolf.CodeFirst.UCommerce.Core.Handlers
 
 			if (definition == null)
 			{
+				string definitionTypeName = Constants.DefinitionType.Category;
+
 				var categoryDefinitionType = session
 					.QueryOver<DefinitionType>()
-					.Where(x => x.Name == "Category")
+					.Where(x => x.Name == definitionTypeName)
 					.SingleOrDefault<DefinitionType>();
 
 				if (categoryDefinitionType == null)
 					throw new InvalidOperationException(
-						string.Format("Could not find definition type 'Category'"));
+						string.Format("Could not find definition type '{0}'", definitionTypeName));
 
 				definition = new Definition
 				{

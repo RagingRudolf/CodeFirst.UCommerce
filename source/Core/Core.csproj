@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="Attributes\BaseDefinitionAttribute.cs" />
     <Compile Include="Attributes\BaseDefinitionFieldAttribute.cs" />
+    <Compile Include="Attributes\CampaignDefinitionAttribute.cs" />
     <Compile Include="Attributes\CategoryDefinitionAttribute.cs" />
     <Compile Include="Attributes\CategoryDefinitionFieldAttribute.cs" />
     <Compile Include="Attributes\LanguageDescriptionAttribute.cs" />
@@ -65,11 +66,13 @@
     <Compile Include="Configuration\CodeFirstConfiguration.cs" />
     <Compile Include="Configuration\ConfigurationProvider.cs" />
     <Compile Include="Configuration\IConfigurationProvider.cs" />
+    <Compile Include="Constants.cs" />
     <Compile Include="Extensions\AssemblyExtensions.cs" />
     <Compile Include="Extensions\EnumerationExtensions.cs" />
     <Compile Include="Extensions\PropertyInfoExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\TypeExtensions.cs" />
+    <Compile Include="Handlers\CampaignDefinitionHandler.cs" />
     <Compile Include="Handlers\CategoryDefinitionHandler.cs" />
     <Compile Include="Handlers\IHandler.cs" />
     <Compile Include="Handlers\ProductDefinitionHandler.cs" />

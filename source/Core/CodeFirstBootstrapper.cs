@@ -32,7 +32,8 @@ namespace RagingRudolf.CodeFirst.UCommerce.Core
 			IHandler[] handlers =
 			{
 				new CategoryDefinitionHandler(session), 
-				new ProductDefinitionHandler(session)
+				new ProductDefinitionHandler(session),
+				new CampaignDefinitionHandler(session)
 			};
 
 			foreach (Type type in sorted)

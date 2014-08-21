@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CampaignDefinitions\SuperCampaign.cs" />
     <Compile Include="CategoryDefinitions\DefaultCategoryDefinition.cs" />
     <Compile Include="ProductDefinitions\MyProductDefinition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
