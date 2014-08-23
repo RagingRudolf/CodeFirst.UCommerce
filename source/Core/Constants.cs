@@ -6,6 +6,7 @@
 		{
 			public static readonly string Category = "Category";
 			public static readonly string CampaignItem = "CampaignItem";
+			public static readonly string PaymentMethod = "PaymentMethod";
 		}
 	}
 }

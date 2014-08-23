@@ -59,6 +59,7 @@
     <Compile Include="Attributes\CategoryDefinitionAttribute.cs" />
     <Compile Include="Attributes\CategoryDefinitionFieldAttribute.cs" />
     <Compile Include="Attributes\LanguageDescriptionAttribute.cs" />
+    <Compile Include="Attributes\PaymentMethodDefinitionAttribute.cs" />
     <Compile Include="Attributes\ProductDefinitionAttribute.cs" />
     <Compile Include="Attributes\ProductDefinitionFieldAttribute.cs" />
     <Compile Include="Attributes\UCommerceAttribute.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Handlers\CategoryDefinitionHandler.cs" />
     <Compile Include="Handlers\Handler.cs" />
     <Compile Include="Handlers\IHandler.cs" />
+    <Compile Include="Handlers\PaymentMethodDefinitionHandler.cs" />
     <Compile Include="Handlers\ProductDefinitionHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

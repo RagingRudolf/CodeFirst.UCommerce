@@ -24,7 +24,7 @@ namespace RagingRudolf.CodeFirst.UCommerce.Core
 				return;
 
 			Assembly assembly = configurationProvider.GetAssembly();
-			IEnumerable<Type> sorted = assembly.GetUCommerceDefinitions();
+			IEnumerable<Type> types = assembly.GetUCommerceDefinitions();
 			
 			ISessionProvider sessionProvider = ObjectFactory.Instance.Resolve<ISessionProvider>();
 			ISession session = sessionProvider.GetSession();
@@ -33,10 +33,11 @@ namespace RagingRudolf.CodeFirst.UCommerce.Core
 			{
 				new CategoryDefinitionHandler(session), 
 				new ProductDefinitionHandler(session),
-				new CampaignDefinitionHandler(session)
+				new CampaignDefinitionHandler(session),
+				new PaymentMethodDefinitionHandler(session), 
 			};
 
-			foreach (Type type in sorted)
+			foreach (Type type in types)
 			{
 				IHandler handler = handlers.FirstOrDefault(x => x.CanHandle(type));
 
