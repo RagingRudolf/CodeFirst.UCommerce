@@ -13,29 +13,19 @@ using UCommerce.EntitiesV2;
 
 namespace RagingRudolf.CodeFirst.UCommerce.Core.Handlers
 {
-	public class ProductDefinitionHandler : IHandler
+	public class ProductDefinitionHandler : Handler<ProductDefinition>
 	{
-		private readonly ISession _session;
-
-		public ProductDefinitionHandler(ISession session)
+		public ProductDefinitionHandler(ISession session) 
+			: base(session)
 		{
-			_session = session;
 		}
 
-		public bool CanHandle(Type type)
+		public override bool CanHandle(Type type)
 		{
 			return type.IsDefined(typeof (ProductDefinitionAttribute), false);
 		}
 
-		public void Handle(Type type)
-		{
-			ProductDefinition definition = HandleDefinition(_session, type);
-			ProductDefinition fieldsAdded = HandleFields(_session, type, definition);
-
-			_session.SaveOrUpdate(fieldsAdded);
-		}
-
-		private static ProductDefinition HandleDefinition(ISession session, Type type)
+		protected override ProductDefinition HandleDefinition(Type type)
 		{
 			var attribute = type.AssertGetCustomAttribute<ProductDefinitionAttribute>();
 
@@ -43,7 +33,7 @@ namespace RagingRudolf.CodeFirst.UCommerce.Core.Handlers
 				? attribute.Name
 				: type.Name;
 
-			var definition = session
+			var definition = Session
 				.QueryOver<ProductDefinition>()
 				.Fetch(x => x.ProductDefinitionFields).Eager
 				.Where(x => x.Name == name)
@@ -60,7 +50,7 @@ namespace RagingRudolf.CodeFirst.UCommerce.Core.Handlers
 			return definition;
 		}
 
-		private static ProductDefinition HandleFields(ISession session, Type type, ProductDefinition definition)
+		protected override ProductDefinition HandleFieldTypes(Type type, ProductDefinition definition)
 		{
 			IEnumerable<PropertyInfo> properties = type.GetAttributedProperties<ProductDefinitionFieldAttribute>();
 
@@ -76,7 +66,7 @@ namespace RagingRudolf.CodeFirst.UCommerce.Core.Handlers
 
 				if (field == null)
 				{
-					var dataType = session
+					var dataType = Session
 						.QueryOver<DataType>()
 						.Where(x => x.TypeName == attribute.DataType)
 						.SingleOrDefault<DataType>();

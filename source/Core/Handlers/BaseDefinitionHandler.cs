@@ -13,30 +13,20 @@ using UCommerce.EntitiesV2;
 
 namespace RagingRudolf.CodeFirst.UCommerce.Core.Handlers
 {
-	public abstract class BaseDefinitionHandler<TAttribute> : IHandler
+	public abstract class BaseDefinitionHandler<TAttribute> : Handler<Definition>
 		where TAttribute : BaseDefinitionAttribute
 	{
-		private readonly ISession _session;
-
-		protected BaseDefinitionHandler(ISession session)
+		protected BaseDefinitionHandler(ISession session) 
+			: base(session)
 		{
-			_session = session;
 		}
 
-		public virtual bool CanHandle(Type type)
+		public override bool CanHandle(Type type)
 		{
 			return type.IsDefined(typeof(TAttribute), false);
 		}
-
-		public virtual void Handle(Type type)
-		{
-			Definition definition = HandleDefinition(type);
-			Definition addedFields = HandleFieldTypes(type, definition);
-
-			_session.SaveOrUpdate(addedFields);
-		}
-
-		protected virtual Definition HandleDefinition(Type type)
+		
+		protected override Definition HandleDefinition(Type type)
 		{
 			var attribute = type.AssertGetCustomAttribute<TAttribute>();
 
@@ -44,7 +34,7 @@ namespace RagingRudolf.CodeFirst.UCommerce.Core.Handlers
 				? attribute.Name
 				: type.Name;
 
-			Definition definition = _session
+			Definition definition = Session
 				.QueryOver<Definition>()
 				.Fetch(x => x.DefinitionFields).Eager
 				.Where(x => x.Name == name)
@@ -54,7 +44,7 @@ namespace RagingRudolf.CodeFirst.UCommerce.Core.Handlers
 			{
 				string definitionTypeName = Constants.DefinitionType.CampaignItem;
 
-				DefinitionType campaignDefinitionType = _session
+				DefinitionType campaignDefinitionType = Session
 					.QueryOver<DefinitionType>()
 					.Where(x => x.Name == definitionTypeName)
 					.SingleOrDefault();
@@ -78,7 +68,7 @@ namespace RagingRudolf.CodeFirst.UCommerce.Core.Handlers
 			return definition;
 		}
 
-		protected virtual Definition HandleFieldTypes(Type type, Definition definition)
+		protected override Definition HandleFieldTypes(Type type, Definition definition)
 		{
 			IEnumerable<PropertyInfo> properties = type.GetAttributedProperties<CategoryDefinitionFieldAttribute>();
 
@@ -94,7 +84,7 @@ namespace RagingRudolf.CodeFirst.UCommerce.Core.Handlers
 
 				if (field == null)
 				{
-					var dataType = _session
+					var dataType = Session
 						.QueryOver<DataType>()
 						.Where(x => x.TypeName == attribute.DataType)
 						.SingleOrDefault<DataType>();

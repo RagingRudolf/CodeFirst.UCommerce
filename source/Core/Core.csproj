@@ -75,6 +75,7 @@
     <Compile Include="Handlers\BaseDefinitionHandler.cs" />
     <Compile Include="Handlers\CampaignDefinitionHandler.cs" />
     <Compile Include="Handlers\CategoryDefinitionHandler.cs" />
+    <Compile Include="Handlers\Handler.cs" />
     <Compile Include="Handlers\IHandler.cs" />
     <Compile Include="Handlers\ProductDefinitionHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
