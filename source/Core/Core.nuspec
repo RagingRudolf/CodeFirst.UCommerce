@@ -8,14 +8,12 @@
     <owners>RagingRudolf</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>CodeFirst for uCommerce. Eliminate the manual process of creating definitions in uCommerce backend. Simple creation of definitions and easy deployment.</description>
-    <releaseNotes>
-      0.0.1: Creation of category and product definitions and fields.
-      0.1.0: 
-        Added ability to add campaign definitions and payment definitions. Fields on campaign/payments as well.
-        Internal refactorings to reduce duplicated code.
-        
-        BREAKING CHANGE:
-          CategoryDefinitionFieldAttribute renamed to DefinitionFieldAttribute
+    <releaseNotes>0.1.0: 
+    Added ability to add campaign definitions and payment definitions. Fields on campaign/payments as well.
+    Internal refactorings to reduce duplicated code.
+    
+      BREAKING CHANGE:
+        CategoryDefinitionFieldAttribute renamed to DefinitionFieldAttribute
     </releaseNotes>
     <projectUrl>https://github.com/RagingRudolf/CodeFirst.UCommerce</projectUrl>
     <licenseUrl>https://github.com/RagingRudolf/CodeFirst.UCommerce/blob/master/LICENSE.md</licenseUrl>
