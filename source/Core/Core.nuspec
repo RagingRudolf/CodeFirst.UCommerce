@@ -12,8 +12,8 @@
     Added ability to add campaign definitions and payment definitions. Fields on campaign/payments as well.
     Internal refactorings to reduce duplicated code.
     
-      BREAKING CHANGE:
-        CategoryDefinitionFieldAttribute renamed to DefinitionFieldAttribute
+    BREAKING CHANGE:
+      CategoryDefinitionFieldAttribute renamed to DefinitionFieldAttribute
     </releaseNotes>
     <projectUrl>https://github.com/RagingRudolf/CodeFirst.UCommerce</projectUrl>
     <licenseUrl>https://github.com/RagingRudolf/CodeFirst.UCommerce/blob/master/LICENSE.md</licenseUrl>
