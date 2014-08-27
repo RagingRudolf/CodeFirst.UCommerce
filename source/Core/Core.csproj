@@ -57,7 +57,7 @@
     <Compile Include="Attributes\BaseDefinitionFieldAttribute.cs" />
     <Compile Include="Attributes\CampaignDefinitionAttribute.cs" />
     <Compile Include="Attributes\CategoryDefinitionAttribute.cs" />
-    <Compile Include="Attributes\CategoryDefinitionFieldAttribute.cs" />
+    <Compile Include="Attributes\DefinitionFieldAttribute.cs" />
     <Compile Include="Attributes\LanguageDescriptionAttribute.cs" />
     <Compile Include="Attributes\PaymentMethodDefinitionAttribute.cs" />
     <Compile Include="Attributes\ProductDefinitionAttribute.cs" />
