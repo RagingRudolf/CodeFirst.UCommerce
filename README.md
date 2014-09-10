@@ -89,7 +89,10 @@ Below can you see how it will look like if we use our code from before.
 
 ## The future
 
-I have a lot of plans but it will take time to execute them all. 
-Next step will be creating some tests for some of the helpers and doing some refactoring to making handlers more simple and more test friendly.
+So far the framework support creating category/product/campaign and payment definitions (more specific the newly added payment definition in uCommerce and not payment provider) with fields that can be multilingual or non-multilingual. 
+Creating DataTypes will be next thing in my pipeline. As right now I am aiming for using same approah for creating data types (using attributes). 
+And I will probably work on the Wiki pages so we can get some actual documentation beside of this readme.
+
+I still like some feedback and if you are missing some features don't hesitate to create an issue with a description of your feature!
 
 Happy coding!
