@@ -1,6 +1,8 @@
 ﻿using System;
 
-namespace RagingRudolf.CodeFirst.UCommerce.Core.Attributes
+using RagingRudolf.CodeFirst.UCommerce.Core.Attributes.Shared;
+
+namespace RagingRudolf.CodeFirst.UCommerce.Core.Attributes.Campaign
 {
 	[AttributeUsage(AttributeTargets.Class, Inherited = true)]
 	public class CampaignDefinitionAttribute : BaseDefinitionAttribute

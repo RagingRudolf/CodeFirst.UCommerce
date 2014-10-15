@@ -1,6 +1,6 @@
 ﻿using NHibernate;
 
-using RagingRudolf.CodeFirst.UCommerce.Core.Attributes;
+using RagingRudolf.CodeFirst.UCommerce.Core.Attributes.Category;
 
 namespace RagingRudolf.CodeFirst.UCommerce.Core.Handlers
 {

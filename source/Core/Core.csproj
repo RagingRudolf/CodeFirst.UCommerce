@@ -47,22 +47,23 @@
     <Reference Include="UCommerce">
       <HintPath>..\..\libraries\uCommerce 6.1.0.14195\UCommerce.dll</HintPath>
     </Reference>
-    <Reference Include="UCommerce.Infrastructure, Version=6.1.0.14195, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\UCommerce.Infrastructure.dll</HintPath>
+    <Reference Include="UCommerce.Infrastructure">
+      <HintPath>..\..\libraries\uCommerce 6.1.0.14195\UCommerce.Infrastructure.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Attributes\BaseDefinitionAttribute.cs" />
-    <Compile Include="Attributes\BaseDefinitionFieldAttribute.cs" />
-    <Compile Include="Attributes\CampaignDefinitionAttribute.cs" />
-    <Compile Include="Attributes\CategoryDefinitionAttribute.cs" />
-    <Compile Include="Attributes\DefinitionFieldAttribute.cs" />
-    <Compile Include="Attributes\LanguageDescriptionAttribute.cs" />
-    <Compile Include="Attributes\PaymentMethodDefinitionAttribute.cs" />
-    <Compile Include="Attributes\ProductDefinitionAttribute.cs" />
-    <Compile Include="Attributes\ProductDefinitionFieldAttribute.cs" />
-    <Compile Include="Attributes\UCommerceAttribute.cs" />
+    <Compile Include="Attributes\DataType\DataTypeAttribute.cs" />
+    <Compile Include="Attributes\Shared\BaseDefinitionAttribute.cs" />
+    <Compile Include="Attributes\Shared\BaseDefinitionFieldAttribute.cs" />
+    <Compile Include="Attributes\Campaign\CampaignDefinitionAttribute.cs" />
+    <Compile Include="Attributes\Category\CategoryDefinitionAttribute.cs" />
+    <Compile Include="Attributes\Shared\DefinitionFieldAttribute.cs" />
+    <Compile Include="Attributes\Shared\LanguageDescriptionAttribute.cs" />
+    <Compile Include="Attributes\Payment\PaymentMethodDefinitionAttribute.cs" />
+    <Compile Include="Attributes\Product\ProductDefinitionAttribute.cs" />
+    <Compile Include="Attributes\Product\ProductDefinitionFieldAttribute.cs" />
+    <Compile Include="Attributes\Shared\UCommerceAttribute.cs" />
+    <Compile Include="BultInDataTypes.cs" />
     <Compile Include="CodeFirstBootstrapper.cs" />
     <Compile Include="Configuration\CodeFirstConfiguration.cs" />
     <Compile Include="Configuration\ConfigurationProvider.cs" />

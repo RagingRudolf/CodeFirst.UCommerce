@@ -1,4 +1,4 @@
-﻿namespace RagingRudolf.CodeFirst.UCommerce.Core.Attributes
+﻿namespace RagingRudolf.CodeFirst.UCommerce.Core.Attributes.Shared
 {
 	public abstract class BaseDefinitionAttribute : UCommerceAttribute
 	{

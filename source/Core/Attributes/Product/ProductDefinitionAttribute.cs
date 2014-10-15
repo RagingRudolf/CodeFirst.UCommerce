@@ -1,6 +1,8 @@
 ﻿using System;
 
-namespace RagingRudolf.CodeFirst.UCommerce.Core.Attributes
+using RagingRudolf.CodeFirst.UCommerce.Core.Attributes.Shared;
+
+namespace RagingRudolf.CodeFirst.UCommerce.Core.Attributes.Product
 {
 	[AttributeUsage(AttributeTargets.Class, Inherited = true)]
 	public class ProductDefinitionAttribute : BaseDefinitionAttribute

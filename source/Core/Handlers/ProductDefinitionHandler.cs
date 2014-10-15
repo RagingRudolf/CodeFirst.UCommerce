@@ -7,6 +7,7 @@ using System.Reflection;
 using NHibernate;
 
 using RagingRudolf.CodeFirst.UCommerce.Core.Attributes;
+using RagingRudolf.CodeFirst.UCommerce.Core.Attributes.Product;
 using RagingRudolf.CodeFirst.UCommerce.Core.Extensions;
 
 using UCommerce.EntitiesV2;

@@ -1,4 +1,5 @@
 ﻿using RagingRudolf.CodeFirst.UCommerce.Core.Attributes;
+using RagingRudolf.CodeFirst.UCommerce.Core.Attributes.Category;
 
 namespace RagingRudolf.Examples.Models.CategoryDefinitions
 {

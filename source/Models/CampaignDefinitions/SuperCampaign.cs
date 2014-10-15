@@ -1,4 +1,5 @@
 ﻿using RagingRudolf.CodeFirst.UCommerce.Core.Attributes;
+using RagingRudolf.CodeFirst.UCommerce.Core.Attributes.Campaign;
 
 namespace RagingRudolf.Examples.Models.CampaignDefinitions
 {
