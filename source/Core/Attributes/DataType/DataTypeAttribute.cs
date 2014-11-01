@@ -16,7 +16,8 @@ namespace RagingRudolf.CodeFirst.UCommerce.Core.Attributes.DataType
 		{
 		}
 
-		public string DefinitionName { get; private set; }
 		public bool Nullable { get; set; }
+		public string DefinitionName { get; private set; }
+		public string ValidationExpression { get; set; }
 	}
 }

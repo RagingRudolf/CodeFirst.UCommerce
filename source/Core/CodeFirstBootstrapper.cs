@@ -31,6 +31,7 @@ namespace RagingRudolf.CodeFirst.UCommerce.Core
 
 			IHandler[] handlers =
 			{
+				new DataTypeHandler(session), 
 				new CategoryDefinitionHandler(session), 
 				new ProductDefinitionHandler(session),
 				new CampaignDefinitionHandler(session),
