@@ -83,6 +83,8 @@
     <Compile Include="Handlers\CampaignDefinitionHandler.cs" />
     <Compile Include="Handlers\CategoryDefinitionHandler.cs" />
     <Compile Include="Handlers\DataTypeHandler.cs" />
+    <Compile Include="Handlers\DataTypeHandlerBase.cs" />
+    <Compile Include="Handlers\EnumDataTypeHandler.cs" />
     <Compile Include="Handlers\Handler.cs" />
     <Compile Include="Handlers\IHandler.cs" />
     <Compile Include="Handlers\PaymentMethodDefinitionHandler.cs" />
