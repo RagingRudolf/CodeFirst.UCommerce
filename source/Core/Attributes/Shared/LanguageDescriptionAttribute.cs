@@ -1,4 +1,5 @@
 ﻿using System;
+using UCommerce.EntitiesV2;
 
 namespace RagingRudolf.CodeFirst.UCommerce.Core.Attributes
 {
@@ -15,5 +16,16 @@ namespace RagingRudolf.CodeFirst.UCommerce.Core.Attributes
 		public string DisplayName { get; protected set; }
 
 		public string Description { get; set; }
+
+		public DataTypeEnumDescription AsEnumDescription(DataTypeEnum dataTypeEnum)
+		{
+			return new DataTypeEnumDescription
+			{
+				CultureCode = Language,
+				DataTypeEnum = dataTypeEnum,
+				DisplayName = DisplayName,
+				Description = Description,
+			};
+		}
 	}
 }
