@@ -7,8 +7,8 @@
     <ProjectGuid>{2D921B67-4762-4D81-B42A-2B94C5846DF2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RagingRudolf.CodeFirst.UCommerce.Cms.Umbraco</RootNamespace>
-    <AssemblyName>RagingRudolf.CodeFirst.UCommerce.Cms.Umbraco</AssemblyName>
+    <RootNamespace>RagingRudolf.UCommerce.CodeFirst.Cms.Umbraco</RootNamespace>
+    <AssemblyName>RagingRudolf.UCommerce.CodeFirst.Cms.Umbraco</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

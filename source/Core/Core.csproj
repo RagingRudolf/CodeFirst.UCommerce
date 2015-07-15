@@ -7,8 +7,8 @@
     <ProjectGuid>{26AC5CE1-D365-483C-B536-B128EC826614}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RagingRudolf.CodeFirst.UCommerce.Core</RootNamespace>
-    <AssemblyName>RagingRudolf.CodeFirst.UCommerce.Core</AssemblyName>
+    <RootNamespace>RagingRudolf.UCommerce.CodeFirst.Core</RootNamespace>
+    <AssemblyName>RagingRudolf.UCommerce.CodeFirst.Core</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
