@@ -1,6 +1,6 @@
-﻿using RagingRudolf.CodeFirst.UCommerce.Core.Attributes;
+﻿using RagingRudolf.UCommerce.CodeFirst.Core.Attributes;
 
-namespace RagingRudolf.Examples.Models.CategoryDefinitions
+namespace RagingRudolf.UCommerce.CodeFirst.Examples.CategoryDefinitions
 {
 	[CategoryDefinition("Default Category 1", Description = "Description is updated")]
 	public class DefaultCategoryDefinition

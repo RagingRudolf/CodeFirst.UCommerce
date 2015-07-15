@@ -1,8 +1,7 @@
 ﻿using System;
-
 using NHibernate;
 
-namespace RagingRudolf.CodeFirst.UCommerce.Core.Handlers
+namespace RagingRudolf.UCommerce.CodeFirst.Core.Handlers
 {
 	public abstract class Handler<TDefinition> : IHandler
 	{

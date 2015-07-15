@@ -1,4 +1,4 @@
-﻿namespace RagingRudolf.CodeFirst.UCommerce.Core
+﻿namespace RagingRudolf.UCommerce.CodeFirst.Core
 {
 	public static class Constants
 	{

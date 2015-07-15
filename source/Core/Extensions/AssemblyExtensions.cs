@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using RagingRudolf.UCommerce.CodeFirst.Core.Attributes;
 
-using RagingRudolf.CodeFirst.UCommerce.Core.Attributes;
-
-namespace RagingRudolf.CodeFirst.UCommerce.Core.Extensions
+namespace RagingRudolf.UCommerce.CodeFirst.Core.Extensions
 {
 	public static class AssemblyExtensions
 	{

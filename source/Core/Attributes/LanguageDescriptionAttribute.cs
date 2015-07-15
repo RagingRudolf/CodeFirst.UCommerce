@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace RagingRudolf.CodeFirst.UCommerce.Core.Attributes
+namespace RagingRudolf.UCommerce.CodeFirst.Core.Attributes
 {
-	[AttributeUsage(AttributeTargets.Property, AllowMultiple = true, Inherited = true)]
+	[AttributeUsage(AttributeTargets.Property, AllowMultiple = true)]
 	public class LanguageDescriptionAttribute : Attribute
 	{
 		public LanguageDescriptionAttribute(string language, string displayName)
@@ -13,7 +13,6 @@ namespace RagingRudolf.CodeFirst.UCommerce.Core.Attributes
 		
 		public string Language { get; protected set; }
 		public string DisplayName { get; protected set; }
-
 		public string Description { get; set; }
 	}
 }

@@ -1,6 +1,6 @@
 ﻿using System.Configuration;
 
-namespace RagingRudolf.CodeFirst.UCommerce.Core.Configuration
+namespace RagingRudolf.UCommerce.CodeFirst.Core.Configuration
 {
 	public class CodeFirstConfiguration : ConfigurationSection
 	{

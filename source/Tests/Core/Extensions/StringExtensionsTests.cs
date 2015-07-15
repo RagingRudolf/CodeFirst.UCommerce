@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
-using RagingRudolf.CodeFirst.UCommerce.Core.Extensions;
+using RagingRudolf.UCommerce.CodeFirst.Core.Extensions;
 
-namespace RagingRudolf.CodeFirst.UCommerce.Tests.Core.Extensions
+namespace RagingRudolf.UCommerce.CodeFirst.Tests.Core.Extensions
 {
 	[TestFixture]
 	public class StringExtensionsTests

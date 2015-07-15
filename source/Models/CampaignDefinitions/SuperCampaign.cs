@@ -1,6 +1,6 @@
-﻿using RagingRudolf.CodeFirst.UCommerce.Core.Attributes;
+﻿using RagingRudolf.UCommerce.CodeFirst.Core.Attributes;
 
-namespace RagingRudolf.Examples.Models.CampaignDefinitions
+namespace RagingRudolf.UCommerce.CodeFirst.Examples.CampaignDefinitions
 {
 	[CampaignDefinition("Super Campaign", Description = "This is a super campaign for awesome on sales item!")]
 	public class SuperCampaign

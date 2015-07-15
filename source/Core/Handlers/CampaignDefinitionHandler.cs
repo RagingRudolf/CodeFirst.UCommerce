@@ -1,8 +1,7 @@
 ﻿using NHibernate;
+using RagingRudolf.UCommerce.CodeFirst.Core.Attributes;
 
-using RagingRudolf.CodeFirst.UCommerce.Core.Attributes;
-
-namespace RagingRudolf.CodeFirst.UCommerce.Core.Handlers
+namespace RagingRudolf.UCommerce.CodeFirst.Core.Handlers
 {
 	public class CampaignDefinitionHandler : BaseDefinitionHandler<CampaignDefinitionAttribute>
 	{

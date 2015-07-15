@@ -3,15 +3,12 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection;
-
 using NHibernate;
-
-using RagingRudolf.CodeFirst.UCommerce.Core.Attributes;
-using RagingRudolf.CodeFirst.UCommerce.Core.Extensions;
-
+using RagingRudolf.UCommerce.CodeFirst.Core.Attributes;
+using RagingRudolf.UCommerce.CodeFirst.Core.Extensions;
 using UCommerce.EntitiesV2;
 
-namespace RagingRudolf.CodeFirst.UCommerce.Core.Handlers
+namespace RagingRudolf.UCommerce.CodeFirst.Core.Handlers
 {
 	public class ProductDefinitionHandler : Handler<ProductDefinition>
 	{

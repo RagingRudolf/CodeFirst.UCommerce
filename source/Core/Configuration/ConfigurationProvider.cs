@@ -1,10 +1,9 @@
 ﻿using System.Configuration;
 using System.IO;
 using System.Reflection;
+using RagingRudolf.UCommerce.CodeFirst.Core.Extensions;
 
-using RagingRudolf.CodeFirst.UCommerce.Core.Extensions;
-
-namespace RagingRudolf.CodeFirst.UCommerce.Core.Configuration
+namespace RagingRudolf.UCommerce.CodeFirst.Core.Configuration
 {
 	public class ConfigurationProvider : IConfigurationProvider
 	{

@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace RagingRudolf.CodeFirst.UCommerce.Core.Attributes
+namespace RagingRudolf.UCommerce.CodeFirst.Core.Attributes
 {
-	[AttributeUsage(AttributeTargets.Property, Inherited = true)]
+	[AttributeUsage(AttributeTargets.Property)]
 	public class DefinitionFieldAttribute : BaseDefinitionFieldAttribute
 	{
 		public DefinitionFieldAttribute(string name, string dataType) 

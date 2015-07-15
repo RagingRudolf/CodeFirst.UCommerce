@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RagingRudolf.CodeFirst.UCommerce.Core.Handlers
+namespace RagingRudolf.UCommerce.CodeFirst.Core.Handlers
 {
 	public interface IHandler
 	{

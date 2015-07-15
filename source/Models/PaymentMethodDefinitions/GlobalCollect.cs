@@ -1,6 +1,6 @@
-﻿using RagingRudolf.CodeFirst.UCommerce.Core.Attributes;
+﻿using RagingRudolf.UCommerce.CodeFirst.Core.Attributes;
 
-namespace RagingRudolf.Examples.Models.PaymentMethodDefinitions
+namespace RagingRudolf.UCommerce.CodeFirst.Examples.PaymentMethodDefinitions
 {
 	[PaymentMethodDefinition("Global Collect", Description = "My Collect")]
 	public class GlobalCollect

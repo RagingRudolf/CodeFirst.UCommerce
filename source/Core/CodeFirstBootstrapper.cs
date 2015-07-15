@@ -2,17 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-
 using NHibernate;
-
-using RagingRudolf.CodeFirst.UCommerce.Core.Configuration;
-using RagingRudolf.CodeFirst.UCommerce.Core.Extensions;
-using RagingRudolf.CodeFirst.UCommerce.Core.Handlers;
-
+using RagingRudolf.UCommerce.CodeFirst.Core.Configuration;
+using RagingRudolf.UCommerce.CodeFirst.Core.Extensions;
+using RagingRudolf.UCommerce.CodeFirst.Core.Handlers;
 using UCommerce.EntitiesV2;
 using UCommerce.Infrastructure;
 
-namespace RagingRudolf.CodeFirst.UCommerce.Core
+namespace RagingRudolf.UCommerce.CodeFirst.Core
 {
 	public static class CodeFirstBootstrapper
 	{

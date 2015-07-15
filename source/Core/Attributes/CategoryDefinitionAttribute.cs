@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace RagingRudolf.CodeFirst.UCommerce.Core.Attributes
+namespace RagingRudolf.UCommerce.CodeFirst.Core.Attributes
 {
-	[AttributeUsage(AttributeTargets.Class, Inherited = true)]
+	[AttributeUsage(AttributeTargets.Class)]
 	public class CategoryDefinitionAttribute : BaseDefinitionAttribute
 	{
 		public CategoryDefinitionAttribute(string name) 

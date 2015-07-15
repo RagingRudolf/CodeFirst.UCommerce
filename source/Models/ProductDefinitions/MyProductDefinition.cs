@@ -1,6 +1,6 @@
-﻿using RagingRudolf.CodeFirst.UCommerce.Core.Attributes;
+﻿using RagingRudolf.UCommerce.CodeFirst.Core.Attributes;
 
-namespace RagingRudolf.Examples.Models.ProductDefinitions
+namespace RagingRudolf.UCommerce.CodeFirst.Examples.ProductDefinitions
 {
 	[ProductDefinition("My Product Definition", Description = "My own product description")]
 	public class MyProductDefinition

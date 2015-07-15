@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace RagingRudolf.CodeFirst.UCommerce.Core.Extensions
+namespace RagingRudolf.UCommerce.CodeFirst.Core.Extensions
 {
 	public static class EnumerationExtensions
 	{
