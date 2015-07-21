@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using RagingRudolf.UCommerce.CodeFirst.Core.Attributes;
 
 namespace RagingRudolf.UCommerce.CodeFirst.Core.Extensions
 {
