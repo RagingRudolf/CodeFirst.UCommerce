@@ -6,8 +6,8 @@ namespace RagingRudolf.UCommerce.CodeFirst.Examples.CategoryDefinitions
 	public class DefaultCategoryDefinition
 	{
 		[Field("IsPrimaryCategoryAlt", "Number", Multilingual = true, DisplayOnSite = true, RenderInEditor = true)]
-		[LanguageDescription("en-US", "Primary category", Description = "This is primary category for a product.")]
-		[LanguageDescription("da-DK", "Primær kategori", Description = "Dette er den primære kategori for et produkt.")]
+		[Language("en-US", "Primary category", Description = "This is primary category for a product.")]
+		[Language("da-DK", "Primær kategori", Description = "Dette er den primære kategori for et produkt.")]
 		public bool IsPrimaryCategory { get; set; }
 	}
 }

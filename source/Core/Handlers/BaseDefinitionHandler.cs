@@ -106,7 +106,7 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core.Handlers
 				field.SortOrder = attribute.SortOrder;
 				field.DefaultValue = attribute.DefaultValue;
 
-				IEnumerable<LanguageDescriptionAttribute> descriptions = propertyInfo.GetCustomAttributes<LanguageDescriptionAttribute>();
+				IEnumerable<LanguageAttribute> descriptions = propertyInfo.GetCustomAttributes<LanguageAttribute>();
 
 				foreach (var description in descriptions)
 				{

@@ -89,7 +89,7 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core.Handlers
 				field.Facet = attribute.Facet;
 				field.IsVariantProperty = attribute.IsVariantProperty;
 
-				IEnumerable<LanguageDescriptionAttribute> descriptions = propertyInfo.GetCustomAttributes<LanguageDescriptionAttribute>();
+				IEnumerable<LanguageAttribute> descriptions = propertyInfo.GetCustomAttributes<LanguageAttribute>();
 
 				foreach (var description in descriptions)
 				{

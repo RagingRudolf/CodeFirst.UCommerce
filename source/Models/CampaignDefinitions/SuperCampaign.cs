@@ -6,7 +6,7 @@ namespace RagingRudolf.UCommerce.CodeFirst.Examples.CampaignDefinitions
 	public class SuperCampaign
 	{
 		[Field("DebitorGroup", "Number", DefaultValue = "1", RenderInEditor = true)]
-		[LanguageDescription("da-DK", "Debitor gruppe",  Description = "Gruppe id'et, som kan modtage denne rabat.")]
+		[Language("da-DK", "Debitor gruppe",  Description = "Gruppe id'et, som kan modtage denne rabat.")]
 		public string DebitorGroup { get; set; }
 	}
 }

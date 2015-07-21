@@ -59,7 +59,7 @@
     <Compile Include="Attributes\CategoryDefinitionAttribute.cs" />
     <Compile Include="Attributes\DefinitionAttribute.cs" />
     <Compile Include="Attributes\FieldAttribute.cs" />
-    <Compile Include="Attributes\LanguageDescriptionAttribute.cs" />
+    <Compile Include="Attributes\LanguageAttribute.cs" />
     <Compile Include="Attributes\PaymentMethodDefinitionAttribute.cs" />
     <Compile Include="Attributes\ProductDefinitionAttribute.cs" />
     <Compile Include="Attributes\ProductDefinitionFieldAttribute.cs" />

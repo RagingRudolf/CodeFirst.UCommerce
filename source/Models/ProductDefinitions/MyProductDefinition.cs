@@ -6,8 +6,8 @@ namespace RagingRudolf.UCommerce.CodeFirst.Examples.ProductDefinitions
 	public class MyProductDefinition
 	{
 		[ProductDefinitionField("Stock", "Number", DisplayOnSite = true, IsVariantProperty = true)]
-		[LanguageDescription("da-DK", "Lager", Description = "Antal enheder på lager.")]
-		[LanguageDescription("en-US", "Stock", Description = "Number of items in stock.")]
+		[Language("da-DK", "Lager", Description = "Antal enheder på lager.")]
+		[Language("en-US", "Stock", Description = "Number of items in stock.")]
 		public int Stock { get; set; }
 	}
 }

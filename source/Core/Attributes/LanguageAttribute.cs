@@ -3,9 +3,9 @@
 namespace RagingRudolf.UCommerce.CodeFirst.Core.Attributes
 {
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = true)]
-	public class LanguageDescriptionAttribute : Attribute
+	public class LanguageAttribute : Attribute
 	{
-		public LanguageDescriptionAttribute(string language, string displayName)
+		public LanguageAttribute(string language, string displayName)
 		{
 			Language = language;
 			DisplayName = displayName;
