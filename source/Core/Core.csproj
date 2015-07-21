@@ -65,7 +65,7 @@
     <Compile Include="Attributes\ProductDefinitionFieldAttribute.cs" />
     <Compile Include="Attributes\CodeFirstAttribute.cs" />
     <Compile Include="CodeFirstBootstrapper.cs" />
-    <Compile Include="Configuration\CodeFirstConfiguration.cs" />
+    <Compile Include="Configuration\CodeFirstConfigurationSection.cs" />
     <Compile Include="Configuration\ConfigurationProvider.cs" />
     <Compile Include="Configuration\IConfigurationProvider.cs" />
     <Compile Include="Constants.cs" />

@@ -2,7 +2,7 @@
 
 namespace RagingRudolf.UCommerce.CodeFirst.Core.Configuration
 {
-	public class CodeFirstConfiguration : ConfigurationSection
+	public class CodeFirstConfigurationSection : ConfigurationSection
 	{
 		[ConfigurationProperty("assemblyname", IsRequired = true)]
 		public string AssemblyName
