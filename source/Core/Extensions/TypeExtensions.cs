@@ -33,7 +33,7 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core.Extensions
 		}
 
         public static IEnumerable<Type> GetTypesWithAttribute<TAttribute>(this IEnumerable<Type> types)
-            where TAttribute : CodeFirstAttribute
+            where TAttribute : Attribute
         {
             return types
                 .EmptyIfNull()
