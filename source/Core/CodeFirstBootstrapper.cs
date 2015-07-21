@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
-using NHibernate;
 using RagingRudolf.UCommerce.CodeFirst.Core.Attributes;
 using RagingRudolf.UCommerce.CodeFirst.Core.Configuration;
 using RagingRudolf.UCommerce.CodeFirst.Core.Extensions;
-using RagingRudolf.UCommerce.CodeFirst.Core.Handlers;
-using UCommerce.EntitiesV2;
-using UCommerce.Infrastructure;
+using RagingRudolf.UCommerce.CodeFirst.Core.Factories;
 
 namespace RagingRudolf.UCommerce.CodeFirst.Core
 {
@@ -21,34 +17,17 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core
 			if (!configurationProvider.Synchronize)
 				return;
 
-			Assembly assembly = configurationProvider.GetAssembly();
+			var assembly = configurationProvider.GetAssembly();
 			IEnumerable<Type> types = assembly.GetTypes()
                 .EmptyIfNull()
-                .WithAttribute<CodeFirstAttribute>();
+                .WithAttribute<CodeFirstAttribute>()
+                .ToList();
 
-			ISessionProvider sessionProvider = ObjectFactory.Instance.Resolve<ISessionProvider>();
-			ISession session = sessionProvider.GetSession();
-
-			IHandler[] handlers =
-			{
-				new CategoryDefinitionHandler(session), 
-				new ProductDefinitionHandler(session),
-				new CampaignDefinitionHandler(session),
-				new PaymentMethodDefinitionHandler(session), 
-			};
-
-			foreach (Type type in types)
-			{
-				IHandler handler = handlers.FirstOrDefault(x => x.CanHandle(type));
-
-				if (handler == null)
-					throw new InvalidOperationException(
-						string.Format("Can not find a handler for type '{0}'", type));
-
-				handler.Handle(type);
-			}
-
-			session.Flush();
+            using (var factory = new DefinitionFactory())
+		    {
+		        foreach(var type in types)
+                    factory.Create(type);
+		    }
 		}
 	}
 }
