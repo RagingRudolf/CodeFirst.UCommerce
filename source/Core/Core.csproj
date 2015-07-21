@@ -57,12 +57,13 @@
     <Compile Include="Attributes\BaseDefinitionFieldAttribute.cs" />
     <Compile Include="Attributes\CampaignDefinitionAttribute.cs" />
     <Compile Include="Attributes\CategoryDefinitionAttribute.cs" />
-    <Compile Include="Attributes\DefinitionFieldAttribute.cs" />
+    <Compile Include="Attributes\DefinitionAttribute.cs" />
+    <Compile Include="Attributes\FieldAttribute.cs" />
     <Compile Include="Attributes\LanguageDescriptionAttribute.cs" />
     <Compile Include="Attributes\PaymentMethodDefinitionAttribute.cs" />
     <Compile Include="Attributes\ProductDefinitionAttribute.cs" />
     <Compile Include="Attributes\ProductDefinitionFieldAttribute.cs" />
-    <Compile Include="Attributes\UCommerceAttribute.cs" />
+    <Compile Include="Attributes\CodeFirstAttribute.cs" />
     <Compile Include="CodeFirstBootstrapper.cs" />
     <Compile Include="Configuration\CodeFirstConfiguration.cs" />
     <Compile Include="Configuration\ConfigurationProvider.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Handlers\PaymentMethodDefinitionHandler.cs" />
     <Compile Include="Handlers\ProductDefinitionHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DefinitionType.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -1,6 +1,6 @@
 ﻿namespace RagingRudolf.UCommerce.CodeFirst.Core.Attributes
 {
-	public class BaseDefinitionFieldAttribute : UCommerceAttribute
+	public class BaseDefinitionFieldAttribute : CodeFirstAttribute
 	{
 		public BaseDefinitionFieldAttribute(string name, string dataType) 
 			: base(name)

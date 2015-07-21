@@ -2,9 +2,9 @@
 
 namespace RagingRudolf.UCommerce.CodeFirst.Core.Attributes
 {
-	public abstract class UCommerceAttribute : Attribute
+	public abstract class CodeFirstAttribute : Attribute
 	{
-		protected UCommerceAttribute(string name)
+		protected CodeFirstAttribute(string name)
 		{
 			Name = name;
 		}

@@ -3,9 +3,9 @@
 namespace RagingRudolf.UCommerce.CodeFirst.Core.Attributes
 {
 	[AttributeUsage(AttributeTargets.Property)]
-	public class DefinitionFieldAttribute : BaseDefinitionFieldAttribute
+	public class FieldAttribute : BaseDefinitionFieldAttribute
 	{
-		public DefinitionFieldAttribute(string name, string dataType) 
+		public FieldAttribute(string name, string dataType) 
 			: base(name, dataType)
 		{
 		}
