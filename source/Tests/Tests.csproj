@@ -42,7 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\Extensions\StringExtensionsTests.cs" />
+    <Compile Include="Core\Extensions\StringExtensionsTester.cs" />
+    <Compile Include="Core\Extensions\TypeExtensionsTester.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

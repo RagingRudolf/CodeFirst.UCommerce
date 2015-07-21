@@ -82,7 +82,7 @@
     <Compile Include="Handlers\PaymentMethodDefinitionHandler.cs" />
     <Compile Include="Handlers\ProductDefinitionHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="DefinitionType.cs" />
+    <Compile Include="BuiltInDefinitionType.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

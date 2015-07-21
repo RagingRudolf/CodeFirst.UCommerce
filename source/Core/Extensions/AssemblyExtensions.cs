@@ -14,7 +14,7 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core.Extensions
 				.GetTypes()
 				.EmptyIfNull();
 			var filtered = types
-				.Where(x => x.IsDefined(typeof(CodeFirstAttribute), true) && x.IsClass && (x.IsNestedPublic || x.IsPublic));
+				.Where(x => x.IsDefined(typeof(CodeFirstAttribute), true) && x.IsPublicClass());
 
 			return filtered;
 		}

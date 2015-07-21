@@ -4,7 +4,7 @@ using RagingRudolf.UCommerce.CodeFirst.Core.Extensions;
 namespace RagingRudolf.UCommerce.CodeFirst.Tests.Core.Extensions
 {
 	[TestFixture]
-	public class StringExtensionsTests
+	public class StringExtensionsTester
 	{
 		[Test]
 		public void IsEmpty_StringIsNull_DoesNotThrowException()

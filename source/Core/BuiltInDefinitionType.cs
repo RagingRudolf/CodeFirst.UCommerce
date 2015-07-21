@@ -1,6 +1,6 @@
 ﻿namespace RagingRudolf.UCommerce.CodeFirst.Core
 {
-    public enum DefinitionType
+    public enum BuiltInDefinitionType
     {
         Category = 0,
         Product = 1,

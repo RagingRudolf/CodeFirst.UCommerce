@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using RagingRudolf.UCommerce.CodeFirst.Core.Attributes;
 
 namespace RagingRudolf.UCommerce.CodeFirst.Core.Extensions
 {
@@ -30,5 +31,18 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core.Extensions
 
 			return properties;
 		}
+
+        public static IEnumerable<Type> GetTypesWithAttribute<TAttribute>(this IEnumerable<Type> types)
+            where TAttribute : CodeFirstAttribute
+        {
+            return types
+                .EmptyIfNull()
+                .Where(type => type.IsDefined(typeof(TAttribute), inherit: true) && type.IsPublicClass());
+        }
+
+	    public static bool IsPublicClass(this Type type)
+        {
+            return type.IsClass && (type.IsNested || type.IsPublic) && !type.IsAbstract;
+        }
 	}
 }
