@@ -42,6 +42,8 @@
     <Compile Include="CampaignDefinitions\SuperCampaign.cs" />
     <Compile Include="CategoryDefinitions\CampaignCategoryDefinition.cs" />
     <Compile Include="CategoryDefinitions\DefaultCategoryDefinition.cs" />
+    <Compile Include="DataTypes\MyDataType.cs" />
+    <Compile Include="DataTypes\MyEnumDataType.cs" />
     <Compile Include="PaymentMethodDefinitions\GlobalCollect.cs" />
     <Compile Include="ProductDefinitions\MyProductDefinition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

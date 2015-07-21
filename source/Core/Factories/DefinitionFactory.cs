@@ -25,6 +25,8 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core.Factories
             _session = session;
             _handlers = new IHandler[]
             {
+                new DataTypeHandler(_session),
+                new EnumDataTypeHandler(_session), 
                 new CategoryDefinitionHandler(_session), 
                 new ProductDefinitionHandler(_session),
                 new CampaignDefinitionHandler(_session),

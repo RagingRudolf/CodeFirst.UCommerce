@@ -30,11 +30,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Iesi.Collections">
-      <HintPath>..\..\packages\Iesi.Collections.3.2.0.1001\lib\Net35\Iesi.Collections.dll</HintPath>
+    <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Iesi.Collections.4.0.0.4000\lib\net40\Iesi.Collections.dll</HintPath>
     </Reference>
-    <Reference Include="NHibernate">
-      <HintPath>..\..\packages\NHibernate.3.3.3.4001\lib\Net35\NHibernate.dll</HintPath>
+    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\NHibernate.4.0.2.4000\lib\net40\NHibernate.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -44,17 +46,17 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="UCommerce">
-      <HintPath>..\..\libraries\uCommerce 6.1.0.14195\UCommerce.dll</HintPath>
-    </Reference>
-    <Reference Include="UCommerce.Infrastructure, Version=6.1.0.14195, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="UCommerce, Version=6.5.3.14346, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\UCommerce.Infrastructure.dll</HintPath>
+      <HintPath>..\..\libraries\uCommerce 6.5.3.14346\UCommerce.dll</HintPath>
+    </Reference>
+    <Reference Include="UCommerce.Infrastructure, Version=6.5.3.14346, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libraries\uCommerce 6.5.3.14346\UCommerce.Infrastructure.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attributes\BaseDefinitionAttribute.cs" />
-    <Compile Include="Attributes\BaseDefinitionFieldAttribute.cs" />
     <Compile Include="Attributes\CampaignDefinitionAttribute.cs" />
     <Compile Include="Attributes\CategoryDefinitionAttribute.cs" />
     <Compile Include="Attributes\DefinitionAttribute.cs" />
@@ -64,6 +66,10 @@
     <Compile Include="Attributes\ProductDefinitionAttribute.cs" />
     <Compile Include="Attributes\ProductDefinitionFieldAttribute.cs" />
     <Compile Include="Attributes\CodeFirstAttribute.cs" />
+    <Compile Include="Attributes\DataType\DataTypeAttribute.cs" />
+    <Compile Include="Attributes\DataType\EnumValueAttribute.cs" />
+    <Compile Include="Attributes\Shared\BaseDefinitionFieldAttribute.cs" />
+    <Compile Include="BultInDataTypes.cs" />
     <Compile Include="CodeFirstBootstrapper.cs" />
     <Compile Include="Configuration\CodeFirstConfigurationSection.cs" />
     <Compile Include="Configuration\ConfigurationProvider.cs" />
@@ -78,6 +84,9 @@
     <Compile Include="Handlers\BaseDefinitionHandler.cs" />
     <Compile Include="Handlers\CampaignDefinitionHandler.cs" />
     <Compile Include="Handlers\CategoryDefinitionHandler.cs" />
+    <Compile Include="Handlers\DataTypeHandler.cs" />
+    <Compile Include="Handlers\DataTypeHandlerBase.cs" />
+    <Compile Include="Handlers\EnumDataTypeHandler.cs" />
     <Compile Include="Handlers\Handler.cs" />
     <Compile Include="Handlers\IHandler.cs" />
     <Compile Include="Handlers\PaymentMethodDefinitionHandler.cs" />
@@ -86,9 +95,9 @@
     <Compile Include="BuiltInDefinitionType.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
