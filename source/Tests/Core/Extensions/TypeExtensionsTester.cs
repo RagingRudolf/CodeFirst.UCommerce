@@ -10,21 +10,21 @@ namespace RagingRudolf.UCommerce.CodeFirst.Tests.Core.Extensions
     public class TypeExtensionsTester
     {
         [Test]
-        public void GetTypesWithAttribute_EnumerableIsNull_DoesNotThrowException()
+        public void WithAttribute_EnumerableIsNull_DoesNotThrowException()
         {
             List<Type> types = null;
-            Assert.That(() => types.GetTypesWithAttribute<CustomTestAttribute>(), Throws.Nothing);
+            Assert.That(() => types.WithAttribute<CustomTestAttribute>(), Throws.Nothing);
         }
 
         [Test]
-        public void GetTypesWithAttribute_EmptyList_ReturnsEmptyList()
+        public void WithAttribute_EmptyList_ReturnsEmptyList()
         {
-            var list = new List<Type>().GetTypesWithAttribute<CustomTestAttribute>();
+            var list = new List<Type>().WithAttribute<CustomTestAttribute>();
             Assert.That(() => list.ToList(), Has.Count.EqualTo(0));
         }
 
         [Test]
-        public void GetTypesWithAttribute_TypesWithoutAttribute_ReturnsEmptyList()
+        public void WithAttribute_TypesWithoutAttribute_ReturnsEmptyList()
         {
             var list = new List<Type>
             {
@@ -34,13 +34,13 @@ namespace RagingRudolf.UCommerce.CodeFirst.Tests.Core.Extensions
                 typeof(PublicClass.InternalNestedClass),
                 typeof(InternalClass)
             };
-            var subject = list.GetTypesWithAttribute<CustomTestAttribute>();
+            var subject = list.WithAttribute<CustomTestAttribute>();
 
             Assert.That(() => subject.ToList(), Has.Count.EqualTo(0));
         }
 
         [Test]
-        public void GetTypesWithAttribute_TypesWithAttribute_ReturnsPublicTypes()
+        public void WithAttribute_TypesWithAttribute_ReturnsPublicTypes()
         {
             var list = new List<Type>
             {
@@ -55,7 +55,7 @@ namespace RagingRudolf.UCommerce.CodeFirst.Tests.Core.Extensions
                 typeof(DefinedPublicClass.DefinedInternalNestedClass),
                 typeof(DefinedPublicClass.DefinedPublicNestedClass)
             };
-            var subject = list.GetTypesWithAttribute<CustomTestAttribute>();
+            var subject = list.WithAttribute<CustomTestAttribute>();
 
             Assert.That(() => subject.ToList(), Has.Count.EqualTo(3));
         }

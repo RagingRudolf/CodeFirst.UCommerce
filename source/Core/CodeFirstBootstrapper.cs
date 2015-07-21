@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using NHibernate;
+using RagingRudolf.UCommerce.CodeFirst.Core.Attributes;
 using RagingRudolf.UCommerce.CodeFirst.Core.Configuration;
 using RagingRudolf.UCommerce.CodeFirst.Core.Extensions;
 using RagingRudolf.UCommerce.CodeFirst.Core.Handlers;
@@ -21,8 +22,10 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core
 				return;
 
 			Assembly assembly = configurationProvider.GetAssembly();
-			IEnumerable<Type> types = assembly.GetUCommerceDefinitions();
-			
+			IEnumerable<Type> types = assembly.GetTypes()
+                .EmptyIfNull()
+                .WithAttribute<CodeFirstAttribute>();
+
 			ISessionProvider sessionProvider = ObjectFactory.Instance.Resolve<ISessionProvider>();
 			ISession session = sessionProvider.GetSession();
 

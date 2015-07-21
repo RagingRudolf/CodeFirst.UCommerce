@@ -31,7 +31,7 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core.Extensions
 			return properties;
 		}
 
-        public static IEnumerable<Type> GetTypesWithAttribute<TAttribute>(this IEnumerable<Type> types)
+        public static IEnumerable<Type> WithAttribute<TAttribute>(this IEnumerable<Type> types)
             where TAttribute : Attribute
         {
             return types
