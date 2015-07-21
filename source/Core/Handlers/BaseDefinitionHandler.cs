@@ -67,11 +67,11 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core.Handlers
 
 		protected override Definition HandleFieldTypes(Type type, Definition definition)
 		{
-			IEnumerable<PropertyInfo> properties = type.GetAttributedProperties<DefinitionFieldAttribute>();
+			IEnumerable<PropertyInfo> properties = type.GetAttributedProperties<FieldAttribute>();
 
 			foreach (PropertyInfo propertyInfo in properties)
 			{
-				var attribute = propertyInfo.AssertGetCustomAttribute<DefinitionFieldAttribute>();
+				var attribute = propertyInfo.AssertGetCustomAttribute<FieldAttribute>();
 				string name = attribute.Name.IsNotEmpty()
 					? attribute.Name
 					: propertyInfo.Name;
