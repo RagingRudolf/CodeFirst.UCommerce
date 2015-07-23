@@ -21,7 +21,7 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core.Handlers
 			if (!type.IsDefined(typeof(DataTypeAttribute), false))
 				return false;
 
-			var attribute = type.AssertGetCustomAttribute<DataTypeAttribute>();
+			var attribute = type.AssertGetAttribute<DataTypeAttribute>();
 
 			return !StringComparer.OrdinalIgnoreCase.Equals(attribute.DefinitionName, BuiltInDataTypes.Enum.ToString());
 		}

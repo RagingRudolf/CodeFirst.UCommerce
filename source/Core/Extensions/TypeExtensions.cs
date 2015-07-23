@@ -7,7 +7,7 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core.Extensions
 {
 	public static class TypeExtensions
 	{
-		public static TAttribute AssertGetCustomAttribute<TAttribute>(this Type definitionType, bool inherit = false)
+		public static TAttribute AssertGetAttribute<TAttribute>(this Type definitionType, bool inherit = false)
 			where TAttribute : Attribute
 		{
 			var attribute = definitionType.GetCustomAttribute<TAttribute>(inherit);
@@ -21,7 +21,7 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core.Extensions
 			return attribute;
 		}
 
-		public static IEnumerable<PropertyInfo> GetAttributedProperties<TAttribute>(this Type definitionType, bool inherit = false)
+		public static IEnumerable<PropertyInfo> GetPropertiesWithAttribute<TAttribute>(this Type definitionType, bool inherit = false)
 		{
 			var properties = definitionType
 				.GetProperties()

@@ -24,7 +24,7 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core.Handlers
 
 		protected override ProductDefinition HandleDefinition(Type type)
 		{
-			var attribute = type.AssertGetCustomAttribute<ProductDefinitionAttribute>();
+			var attribute = type.AssertGetAttribute<ProductDefinitionAttribute>();
 
 			string name = attribute.Name.IsNotEmpty()
 				? attribute.Name
@@ -49,11 +49,11 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core.Handlers
 
 		protected override ProductDefinition HandleFieldTypes(Type type, ProductDefinition definition)
 		{
-			IEnumerable<PropertyInfo> properties = type.GetAttributedProperties<ProductDefinitionFieldAttribute>();
+			IEnumerable<PropertyInfo> properties = type.GetPropertiesWithAttribute<ProductDefinitionFieldAttribute>();
 
 			foreach (PropertyInfo propertyInfo in properties)
 			{
-				var attribute = propertyInfo.AssertGetCustomAttribute<ProductDefinitionFieldAttribute>();
+				var attribute = propertyInfo.AssertGetAttribute<ProductDefinitionFieldAttribute>();
 				string name = attribute.Name.IsNotEmpty()
 					? attribute.Name
 					: propertyInfo.Name;

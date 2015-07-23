@@ -21,7 +21,7 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core.Handlers
 
 		public DataType GetDataTypeEntity(Type type)
 		{
-			var attribute = type.AssertGetCustomAttribute<DataTypeAttribute>();
+			var attribute = type.AssertGetAttribute<DataTypeAttribute>();
 
 			string name = attribute.Name.IsNotEmpty()
 				? attribute.Name

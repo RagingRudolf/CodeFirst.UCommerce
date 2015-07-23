@@ -2,9 +2,9 @@
 {
     public enum BuiltInDefinitionType
     {
-        Category = 0,
-        Product = 1,
-        Campaign = 2,
-        Payment = 4
+        Category,
+        Product,
+        CampaignItem,
+        PaymentMethod
     }
 }

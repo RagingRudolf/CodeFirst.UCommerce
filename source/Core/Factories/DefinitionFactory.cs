@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using NHibernate;
-using RagingRudolf.UCommerce.CodeFirst.Core.Handlers;
+using RagingRudolf.UCommerce.CodeFirst.Core.Creators;
 using UCommerce.EntitiesV2;
 using UCommerce.Infrastructure;
 
@@ -11,7 +10,7 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core.Factories
     public class DefinitionFactory : IDefinitionFactory, IDisposable
     {
         private readonly ISession _session;
-        private readonly IEnumerable<IHandler> _handlers;
+        private readonly IDictionary<string, IDefinitionCreator> _definitionCreators; 
 
         public DefinitionFactory()
             : this(ObjectFactory.Instance.Resolve<ISessionProvider>().GetSession())
@@ -23,26 +22,20 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core.Factories
             if (session == null) throw new ArgumentNullException("session");
 
             _session = session;
-            _handlers = new IHandler[]
+            _definitionCreators = new Dictionary<string, IDefinitionCreator>
             {
-                new DataTypeHandler(_session),
-                new EnumDataTypeHandler(_session), 
-                new CategoryDefinitionHandler(_session), 
-                new ProductDefinitionHandler(_session),
-                new CampaignDefinitionHandler(_session),
-                new PaymentMethodDefinitionHandler(_session)
+                { typeof (DefinitionCreator).Name, new DefinitionCreator(_session) }
             };
         }
 
         public void Create(Type type)
         {
-            var handler = _handlers.FirstOrDefault(x => x.CanHandle(type));
-
-            if (handler == null)
+            IDefinitionCreator definitionCreator;
+            if (!_definitionCreators.TryGetValue(type.Name, out definitionCreator))
                 throw new InvalidOperationException(
-                    string.Format("Can not find a handler for type '{0}'", type));
+                    string.Format("Cannot find any DefinitionCreator for type '{0}'", type.Name));
 
-            handler.Handle(type);
+            definitionCreator.CreateOrUpdate(type);
         }
 
         public void Dispose()
