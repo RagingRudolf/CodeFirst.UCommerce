@@ -12,7 +12,7 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core.Factories
     public class DefinitionCreatorFactory : IDefinitionCreatorFactory, IDisposable
     {
         private readonly ISession _session;
-        private readonly IDictionary<string, IDefinitionCreator> _definitionCreators; 
+        private readonly IDictionary<BuiltInDefinitionType, IDefinitionCreator> _definitionCreators; 
 
         public DefinitionCreatorFactory()
             : this(ObjectFactory.Instance.Resolve<ISessionProvider>().GetSession())
@@ -24,18 +24,23 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core.Factories
             if (session == null) throw new ArgumentNullException("session");
 
             _session = session;
-            _definitionCreators = new Dictionary<string, IDefinitionCreator>
+            
+            var definitionCreator = new DefinitionCreator(_session);
+
+            _definitionCreators = new Dictionary<BuiltInDefinitionType, IDefinitionCreator>
             {
-                { typeof (DefinitionAttribute).Name, new DefinitionCreator(_session) }
+                { BuiltInDefinitionType.CampaignItem, definitionCreator },
+                { BuiltInDefinitionType.Category, definitionCreator },
+                { BuiltInDefinitionType.PaymentMethod, definitionCreator }
             };
         }
 
         public void Create(Type type)
         {
-            var attribute = type.AssertGetAttribute<CodeFirstAttribute>();
+            var attribute = type.AssertGetAttribute<DefinitionAttribute>();
 
             IDefinitionCreator definitionCreator;
-            if (!_definitionCreators.TryGetValue(attribute.GetType().Name, out definitionCreator))
+            if (!_definitionCreators.TryGetValue(attribute.DefinitionType, out definitionCreator))
                 throw new InvalidOperationException(
                     string.Format("Cannot find any DefinitionCreator for type '{0}'", type.Name));
 

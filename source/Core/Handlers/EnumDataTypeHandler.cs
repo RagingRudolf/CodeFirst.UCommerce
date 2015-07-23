@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using NHibernate;
-using RagingRudolf.CodeFirst.UCommerce.Core;
 using RagingRudolf.UCommerce.CodeFirst.Core.Attributes;
 using RagingRudolf.UCommerce.CodeFirst.Core.Attributes.DataType;
 using RagingRudolf.UCommerce.CodeFirst.Core.Extensions;
@@ -28,7 +27,7 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core.Handlers
 
 			var attribute = type.AssertGetAttribute<DataTypeAttribute>();
 
-			return StringComparer.OrdinalIgnoreCase.Equals(attribute.DefinitionName, BuiltInDataTypes.Enum.ToString());
+			return StringComparer.OrdinalIgnoreCase.Equals(attribute.DefinitionName, BuiltInDataType.Enum.ToString());
 		}
 
 		public override void Handle(Type type)

@@ -69,7 +69,7 @@
     <Compile Include="Attributes\DataType\DataTypeAttribute.cs" />
     <Compile Include="Attributes\DataType\EnumValueAttribute.cs" />
     <Compile Include="Attributes\Shared\BaseDefinitionFieldAttribute.cs" />
-    <Compile Include="BultInDataTypes.cs" />
+    <Compile Include="BuiltInDataType.cs" />
     <Compile Include="CodeFirstBootstrapper.cs" />
     <Compile Include="Configuration\CodeFirstConfigurationSection.cs" />
     <Compile Include="Configuration\ConfigurationProvider.cs" />

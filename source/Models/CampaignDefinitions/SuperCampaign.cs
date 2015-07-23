@@ -1,8 +1,9 @@
-﻿using RagingRudolf.UCommerce.CodeFirst.Core.Attributes;
+﻿using RagingRudolf.UCommerce.CodeFirst.Core;
+using RagingRudolf.UCommerce.CodeFirst.Core.Attributes;
 
 namespace RagingRudolf.UCommerce.CodeFirst.Examples.CampaignDefinitions
 {
-    //[CampaignDefinition("Super Campaign", Description = "This is a super campaign for awesome on sales item!")]
+    [Definition(BuiltInDefinitionType.CampaignItem, "Super Campaign", "This is a super campaign for awesome on sales item!")]
 	public class SuperCampaign
 	{
 		[Field("DebitorGroup", "Number", DefaultValue = "1", RenderInEditor = true)]

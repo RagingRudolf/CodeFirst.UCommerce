@@ -1,8 +1,9 @@
-﻿using RagingRudolf.UCommerce.CodeFirst.Core.Attributes;
+﻿using RagingRudolf.UCommerce.CodeFirst.Core;
+using RagingRudolf.UCommerce.CodeFirst.Core.Attributes;
 
 namespace RagingRudolf.UCommerce.CodeFirst.Examples.CategoryDefinitions
 {
-    //[CategoryDefinition("Default Category 1", Description = "Description is updated")]
+    [Definition(BuiltInDefinitionType.Category, "Default Category 1", "Description is updated")]
 	public class DefaultCategoryDefinition
 	{
 		[Field("IsPrimaryCategoryAlt", "Number", Multilingual = true, DisplayOnSite = true, RenderInEditor = true)]

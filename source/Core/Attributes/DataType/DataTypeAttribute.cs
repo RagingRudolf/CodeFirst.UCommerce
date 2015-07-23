@@ -1,5 +1,4 @@
 ﻿using System;
-using RagingRudolf.CodeFirst.UCommerce.Core;
 
 namespace RagingRudolf.UCommerce.CodeFirst.Core.Attributes.DataType
 {
@@ -12,7 +11,7 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core.Attributes.DataType
 			DefinitionName = definitionName;
 		}
 
-		public DataTypeAttribute(string name, BuiltInDataTypes definitionName)
+		public DataTypeAttribute(string name, BuiltInDataType definitionName)
 			: this(name, definitionName.ToString())
 		{
 		}

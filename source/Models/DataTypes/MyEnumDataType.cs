@@ -1,5 +1,4 @@
-﻿using RagingRudolf.CodeFirst.UCommerce.Core;
-using RagingRudolf.UCommerce.CodeFirst.Core.Attributes;
+﻿using RagingRudolf.UCommerce.CodeFirst.Core.Attributes;
 using RagingRudolf.UCommerce.CodeFirst.Core.Attributes.DataType;
 
 namespace RagingRudolf.UCommerce.CodeFirst.Examples.DataTypes
