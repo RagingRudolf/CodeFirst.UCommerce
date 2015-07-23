@@ -2,7 +2,7 @@
 
 namespace RagingRudolf.UCommerce.CodeFirst.Core.Factories
 {
-    public interface IDefinitionFactory
+    public interface IDefinitionCreatorFactory
     {
         void Create(Type type);
     }

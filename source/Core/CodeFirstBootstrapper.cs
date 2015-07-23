@@ -23,7 +23,7 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core
                 .WithAttribute<CodeFirstAttribute>()
                 .ToList();
 
-            using (var factory = new DefinitionFactory())
+            using (var factory = new DefinitionCreatorFactory())
 		    {
 		        foreach(var type in types)
                     factory.Create(type);

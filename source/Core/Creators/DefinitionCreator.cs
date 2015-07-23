@@ -41,6 +41,8 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core.Creators
             {
                 AddMultilingualDescriptions(propertyInfo, CreateField(propertyInfo, definition));
             }
+
+            _session.SaveOrUpdate(definition);
         }
 
         private static void AddMultilingualDescriptions(PropertyInfo propertyInfo, DefinitionField field)
