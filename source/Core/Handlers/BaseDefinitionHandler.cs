@@ -39,7 +39,7 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core.Handlers
 
 			if (definition == null)
 			{
-				string definitionTypeName = Constants.DefinitionType.CampaignItem;
+				string definitionTypeName = DefinitionType;
 
 				DefinitionType campaignDefinitionType = Session
 					.QueryOver<DefinitionType>()

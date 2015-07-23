@@ -57,12 +57,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attributes\BaseDefinitionAttribute.cs" />
-    <Compile Include="Attributes\CampaignDefinitionAttribute.cs" />
-    <Compile Include="Attributes\CategoryDefinitionAttribute.cs" />
     <Compile Include="Attributes\DefinitionAttribute.cs" />
     <Compile Include="Attributes\FieldAttribute.cs" />
     <Compile Include="Attributes\LanguageAttribute.cs" />
-    <Compile Include="Attributes\PaymentMethodDefinitionAttribute.cs" />
     <Compile Include="Attributes\ProductDefinitionAttribute.cs" />
     <Compile Include="Attributes\ProductDefinitionFieldAttribute.cs" />
     <Compile Include="Attributes\CodeFirstAttribute.cs" />
@@ -84,14 +81,11 @@
     <Compile Include="Factories\DefinitionCreatorFactory.cs" />
     <Compile Include="Factories\IDefinitionCreatorFactory.cs" />
     <Compile Include="Handlers\BaseDefinitionHandler.cs" />
-    <Compile Include="Handlers\CampaignDefinitionHandler.cs" />
-    <Compile Include="Handlers\CategoryDefinitionHandler.cs" />
     <Compile Include="Handlers\DataTypeHandler.cs" />
     <Compile Include="Handlers\DataTypeHandlerBase.cs" />
     <Compile Include="Handlers\EnumDataTypeHandler.cs" />
     <Compile Include="Handlers\Handler.cs" />
     <Compile Include="Handlers\IHandler.cs" />
-    <Compile Include="Handlers\PaymentMethodDefinitionHandler.cs" />
     <Compile Include="Handlers\ProductDefinitionHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BuiltInDefinitionType.cs" />

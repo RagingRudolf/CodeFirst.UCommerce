@@ -2,14 +2,7 @@
 {
 	public static class Constants
 	{
-		public static class DefinitionType
-		{
-			public static readonly string Category = "Category";
-			public static readonly string CampaignItem = "CampaignItem";
-			public static readonly string PaymentMethod = "PaymentMethod";
-		}
-
-	    public static class BuiltInDataTypes
+		public static class BuiltInDataTypes
 	    {
 	        public const string ShortText = "ShortText";
 	        public const string LongText = "LongText";
