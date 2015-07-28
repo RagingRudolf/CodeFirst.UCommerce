@@ -1,4 +1,6 @@
-﻿namespace RagingRudolf.UCommerce.CodeFirst.Core.Attributes.DataType
+﻿using RagingRudolf.UCommerce.CodeFirst.Core.Attributes.Shared;
+
+namespace RagingRudolf.UCommerce.CodeFirst.Core.Attributes.DataType
 {
 	public class EnumValueAttribute : CodeFirstAttribute
 	{

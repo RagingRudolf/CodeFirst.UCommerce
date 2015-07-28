@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using NHibernate;
-using RagingRudolf.UCommerce.CodeFirst.Core.Attributes;
+using RagingRudolf.UCommerce.CodeFirst.Core.Attributes.Shared;
 using RagingRudolf.UCommerce.CodeFirst.Core.Creators;
 using RagingRudolf.UCommerce.CodeFirst.Core.Extensions;
 using UCommerce.EntitiesV2;
@@ -26,12 +26,14 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core.Factories
             _session = session;
             
             var definitionCreator = new DefinitionCreator(_session);
+            var productDefinitionCreator = new DefinitionCreator(_session);
 
             _definitionCreators = new Dictionary<BuiltInDefinitionType, IDefinitionCreator>
             {
                 { BuiltInDefinitionType.CampaignItem, definitionCreator },
                 { BuiltInDefinitionType.Category, definitionCreator },
-                { BuiltInDefinitionType.PaymentMethod, definitionCreator }
+                { BuiltInDefinitionType.PaymentMethod, definitionCreator },
+                { BuiltInDefinitionType.Product, productDefinitionCreator }
             };
         }
 

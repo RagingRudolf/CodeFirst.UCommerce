@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RagingRudolf.UCommerce.CodeFirst.Core.Attributes
+namespace RagingRudolf.UCommerce.CodeFirst.Core.Attributes.Shared
 {
     [AttributeUsage(AttributeTargets.Class)]
     public sealed class DefinitionAttribute : CodeFirstAttribute

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using RagingRudolf.UCommerce.CodeFirst.Core.Attributes;
+using RagingRudolf.UCommerce.CodeFirst.Core.Attributes.Shared;
 using RagingRudolf.UCommerce.CodeFirst.Core.Configuration;
 using RagingRudolf.UCommerce.CodeFirst.Core.Extensions;
 using RagingRudolf.UCommerce.CodeFirst.Core.Factories;

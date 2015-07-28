@@ -1,4 +1,4 @@
-﻿using RagingRudolf.UCommerce.CodeFirst.Core.Attributes;
+﻿using RagingRudolf.UCommerce.CodeFirst.Core.Attributes.Shared;
 
 namespace RagingRudolf.UCommerce.CodeFirst.Examples.ProductDefinitions
 {

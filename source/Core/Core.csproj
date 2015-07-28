@@ -56,13 +56,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Attributes\BaseDefinitionAttribute.cs" />
-    <Compile Include="Attributes\DefinitionAttribute.cs" />
-    <Compile Include="Attributes\FieldAttribute.cs" />
-    <Compile Include="Attributes\LanguageAttribute.cs" />
-    <Compile Include="Attributes\ProductDefinitionAttribute.cs" />
-    <Compile Include="Attributes\ProductDefinitionFieldAttribute.cs" />
-    <Compile Include="Attributes\CodeFirstAttribute.cs" />
+    <Compile Include="Attributes\Shared\DefinitionAttribute.cs" />
+    <Compile Include="Attributes\Shared\FieldAttribute.cs" />
+    <Compile Include="Attributes\Shared\LanguageAttribute.cs" />
+    <Compile Include="Attributes\Product\ProductFieldAttribute.cs" />
+    <Compile Include="Attributes\Shared\CodeFirstAttribute.cs" />
     <Compile Include="Attributes\DataType\DataTypeAttribute.cs" />
     <Compile Include="Attributes\DataType\EnumValueAttribute.cs" />
     <Compile Include="Attributes\Shared\BaseDefinitionFieldAttribute.cs" />
@@ -74,19 +72,18 @@
     <Compile Include="Constants.cs" />
     <Compile Include="Creators\DefinitionCreator.cs" />
     <Compile Include="Creators\IDefinitionCreator.cs" />
+    <Compile Include="Creators\ProductDefinitionCreator.cs" />
     <Compile Include="Extensions\EnumerationExtensions.cs" />
     <Compile Include="Extensions\PropertyInfoExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\TypeExtensions.cs" />
     <Compile Include="Factories\DefinitionCreatorFactory.cs" />
     <Compile Include="Factories\IDefinitionCreatorFactory.cs" />
-    <Compile Include="Handlers\BaseDefinitionHandler.cs" />
     <Compile Include="Handlers\DataTypeHandler.cs" />
     <Compile Include="Handlers\DataTypeHandlerBase.cs" />
     <Compile Include="Handlers\EnumDataTypeHandler.cs" />
     <Compile Include="Handlers\Handler.cs" />
     <Compile Include="Handlers\IHandler.cs" />
-    <Compile Include="Handlers\ProductDefinitionHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BuiltInDefinitionType.cs" />
   </ItemGroup>

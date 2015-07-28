@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using NHibernate;
 using RagingRudolf.UCommerce.CodeFirst.Core.Attributes;
+using RagingRudolf.UCommerce.CodeFirst.Core.Attributes.Shared;
 using RagingRudolf.UCommerce.CodeFirst.Core.Extensions;
 using UCommerce.EntitiesV2;
 
