@@ -10,7 +10,7 @@ using UCommerce.EntitiesV2;
 
 namespace RagingRudolf.UCommerce.CodeFirst.Core.Creators
 {
-    public class ProductDefinitionCreator : IDefinitionCreator
+    public class ProductDefinitionCreator : ICreator
     {
         private readonly ISession _session;
 

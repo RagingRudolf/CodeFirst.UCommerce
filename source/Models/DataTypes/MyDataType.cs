@@ -1,8 +1,9 @@
-﻿using RagingRudolf.UCommerce.CodeFirst.Core.Attributes.DataType;
+﻿using RagingRudolf.UCommerce.CodeFirst.Core;
+using RagingRudolf.UCommerce.CodeFirst.Core.Attributes.DataType;
 
 namespace RagingRudolf.UCommerce.CodeFirst.Examples.DataTypes
 {
-    //[DataType("MyNewDataType", BuiltInDataTypes.Number)]
+    [DataType("MyNewDataType", Constants.BuiltInDataTypes.Number)]
 	public class MyDataType
 	{
 	}

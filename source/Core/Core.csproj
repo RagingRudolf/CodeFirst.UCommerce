@@ -70,8 +70,9 @@
     <Compile Include="Configuration\ConfigurationProvider.cs" />
     <Compile Include="Configuration\IConfigurationProvider.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="Creators\DataTypeCreator.cs" />
     <Compile Include="Creators\DefinitionCreator.cs" />
-    <Compile Include="Creators\IDefinitionCreator.cs" />
+    <Compile Include="Creators\ICreator.cs" />
     <Compile Include="Creators\ProductDefinitionCreator.cs" />
     <Compile Include="Extensions\EnumerationExtensions.cs" />
     <Compile Include="Extensions\PropertyInfoExtensions.cs" />
@@ -79,11 +80,6 @@
     <Compile Include="Extensions\TypeExtensions.cs" />
     <Compile Include="Factories\DefinitionCreatorFactory.cs" />
     <Compile Include="Factories\IDefinitionCreatorFactory.cs" />
-    <Compile Include="Handlers\DataTypeHandler.cs" />
-    <Compile Include="Handlers\DataTypeHandlerBase.cs" />
-    <Compile Include="Handlers\EnumDataTypeHandler.cs" />
-    <Compile Include="Handlers\Handler.cs" />
-    <Compile Include="Handlers\IHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BuiltInDefinitionType.cs" />
   </ItemGroup>

@@ -3,7 +3,7 @@
 namespace RagingRudolf.UCommerce.CodeFirst.Core.Attributes.Shared
 {
     [AttributeUsage(AttributeTargets.Class)]
-    public sealed class DefinitionAttribute : CodeFirstAttribute
+    public class DefinitionAttribute : CodeFirstAttribute
     {
         public DefinitionAttribute(BuiltInDefinitionType definitionType, string name) 
             : base(name)

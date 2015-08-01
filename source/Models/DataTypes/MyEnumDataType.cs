@@ -1,20 +1,22 @@
-﻿using RagingRudolf.UCommerce.CodeFirst.Core.Attributes.Shared;
+﻿using RagingRudolf.UCommerce.CodeFirst.Core;
+using RagingRudolf.UCommerce.CodeFirst.Core.Attributes.DataType;
+using RagingRudolf.UCommerce.CodeFirst.Core.Attributes.Shared;
 
 namespace RagingRudolf.UCommerce.CodeFirst.Examples.DataTypes
 {
-    //[DataType("BookType", BuiltInDataTypes.Enum)]
+    [DataType("BookType", Constants.BuiltInDataTypes.Enum)]
 	public class MyEnumDataType
 	{
-        //[EnumValue("Ebook")]
+        [EnumValue("Ebook")]
 		public string Ebook { get; set; }
 
-        //[EnumValue("Papirback")]
+        [EnumValue("Papirback")]
 		public string Papirback { get; set; }
 
-        //[EnumValue("Hardback")]
+        [EnumValue("Hardback")]
 		public string Hardback { get; set; }
 
-        //[EnumValue("Voicebook")]
+        [EnumValue("Voicebook")]
 		[Language("da-DK", "Lydbog", Description = "Dansk beskrivelse")]
 		[Language("en-US", "Voice book", Description = "English description")]
 		public string Voicebook { get; set; }

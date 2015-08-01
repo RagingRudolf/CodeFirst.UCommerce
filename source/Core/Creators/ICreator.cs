@@ -2,7 +2,7 @@
 
 namespace RagingRudolf.UCommerce.CodeFirst.Core.Creators
 {
-    public interface IDefinitionCreator
+    public interface ICreator
     {
         void CreateOrUpdate(Type type);
     }

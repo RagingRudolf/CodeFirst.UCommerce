@@ -5,6 +5,7 @@
         Category,
         Product,
         CampaignItem,
-        PaymentMethod
+        PaymentMethod,
+        DataType
     }
 }

@@ -13,6 +13,7 @@
 	        public const string RichText = "RichText";
 	        public const string Content = "Content";
 	        public const string DateTime = "DateTimePicker";
+		    public const string Enum = "Enum";
 	    }
 	}
 }

@@ -12,7 +12,7 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core.Factories
     public class DefinitionCreatorFactory : IDefinitionCreatorFactory, IDisposable
     {
         private readonly ISession _session;
-        private readonly IDictionary<BuiltInDefinitionType, IDefinitionCreator> _definitionCreators; 
+        private readonly IDictionary<BuiltInDefinitionType, ICreator> _definitionCreators; 
 
         public DefinitionCreatorFactory()
             : this(ObjectFactory.Instance.Resolve<ISessionProvider>().GetSession())
@@ -25,15 +25,17 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core.Factories
 
             _session = session;
             
-            var definitionCreator = new DefinitionCreator(_session);
-            var productDefinitionCreator = new DefinitionCreator(_session);
+            var definitionCreator = new DefinitionCreator(session);
+            var productDefinitionCreator = new DefinitionCreator(session);
+            var dataTypeCreator = new DataTypeCreator(session);
 
-            _definitionCreators = new Dictionary<BuiltInDefinitionType, IDefinitionCreator>
+            _definitionCreators = new Dictionary<BuiltInDefinitionType, ICreator>
             {
                 { BuiltInDefinitionType.CampaignItem, definitionCreator },
                 { BuiltInDefinitionType.Category, definitionCreator },
                 { BuiltInDefinitionType.PaymentMethod, definitionCreator },
-                { BuiltInDefinitionType.Product, productDefinitionCreator }
+                { BuiltInDefinitionType.Product, productDefinitionCreator },
+                { BuiltInDefinitionType.DataType, dataTypeCreator }
             };
         }
 
@@ -41,7 +43,7 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core.Factories
         {
             var attribute = type.AssertGetAttribute<DefinitionAttribute>();
 
-            IDefinitionCreator definitionCreator;
+            ICreator definitionCreator;
             if (!_definitionCreators.TryGetValue(attribute.DefinitionType, out definitionCreator))
                 throw new InvalidOperationException(
                     string.Format("Cannot find any DefinitionCreator for type '{0}'", type.Name));
