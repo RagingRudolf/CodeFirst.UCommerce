@@ -26,7 +26,7 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core.Factories
             _session = session;
             
             var definitionCreator = new DefinitionCreator(session);
-            var productDefinitionCreator = new DefinitionCreator(session);
+            var productDefinitionCreator = new ProductDefinitionCreator(session);
             var dataTypeCreator = new DataTypeCreator(session);
 
             _definitionCreators = new Dictionary<BuiltInDefinitionType, ICreator>

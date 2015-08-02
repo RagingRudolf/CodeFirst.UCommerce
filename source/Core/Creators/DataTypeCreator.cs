@@ -99,7 +99,7 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core.Creators
             dataType.Deleted = false;
             dataType.DefinitionName = dataTypeAttribute.DefinitionName;
             dataType.Nullable = dataTypeAttribute.Nullable;
-            dataType.ValidationExpression = dataTypeAttribute.ValidationExpression;
+            dataType.ValidationExpression = dataTypeAttribute.ValidationExpression ?? string.Empty;
 
             return dataType;
         }
