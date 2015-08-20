@@ -6,7 +6,7 @@ namespace RagingRudolf.UCommerce.CodeFirst.Examples.PaymentMethodDefinitions
     [Definition(BuiltInDefinitionType.PaymentMethod, "Global Collect", "My Collect")]
 	public class GlobalCollect
 	{
-		[Field("Field Test", "Number", DisplayOnSite = true)]
+		[Field("Field Test", Constants.BuiltInDataTypes.Number, DisplayOnSite = true)]
 		public string Test { get; set; }
 	}
 }
