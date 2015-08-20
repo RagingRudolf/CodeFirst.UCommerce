@@ -63,10 +63,10 @@ Example:
 
 Creating definitions with CodeFirst for uCommerce is simple and I will be working on keeping it that way! The basics are that you mark a class with an attribute that you wish should be a definition and mark properties with an attribute as well if you want being created as properties for your definition. In the example below we will create a category definition with a property:
 
-	[CategoryDefinition("Default Category 1", Description = "Description is updated")]
+	[Definition((BuiltInDefinitionType.Category, "Default Category 1", Description = "Description is updated")]
 	public class DefaultCategoryDefinition
 	{
-		[DefinitionField("IsPrimaryCategoryAlt", "Number", DisplayOnSite = true, RenderInEditor = true)]
+		[Field("IsPrimaryCategoryAlt", Constants.BuiltInDataTypes.Number, DisplayOnSite = true, RenderInEditor = true)]
 		public bool IsPrimaryCategory { get; set; }
 	}
 
@@ -77,12 +77,12 @@ Defining a description and display name for a language is done by setting a Lang
 
 Below can you see how it will look like if we use our code from before.
 
-	[CategoryDefinition("Default Category 1", Description = "Description is updated")]
+	[Definition(BuiltInDefinitionType.Category, "Default Category 1", Description = "Description is updated")]
 	public class DefaultCategoryDefinition
 	{
-		[DefinitionField("IsPrimaryCategoryAlt", "Number", Multilingual = true, DisplayOnSite = true, RenderInEditor = true)]
-		[LanguageDescription("en-US", "Primary category", Description = "This is primary category for a product.")]
-		[LanguageDescription("da-DK", "Primær kategori", Description = "Dette er den primære kategori for et produkt.")]
+		[Field("IsPrimaryCategoryAlt", Constants.BuiltInDataTypes.Number, Multilingual = true, DisplayOnSite = true, RenderInEditor = true)]
+		[Language("en-US", "Primary category", Description = "This is primary category for a product.")]
+		[Language("da-DK", "Primær kategori", Description = "Dette er den primære kategori for et produkt.")]
 		public bool IsPrimaryCategory { get; set; }
 	}
 
