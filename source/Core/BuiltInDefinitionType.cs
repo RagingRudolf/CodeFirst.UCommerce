@@ -1,4 +1,6 @@
-﻿namespace RagingRudolf.UCommerce.CodeFirst.Core
+﻿using System;
+
+namespace RagingRudolf.UCommerce.CodeFirst.Core
 {
     public enum BuiltInDefinitionType
     {
@@ -6,6 +8,7 @@
         Product,
         CampaignItem,
         PaymentMethod,
+        [Obsolete("Use DataTypeAttribute instead of DefinitionAttribute.")]
         DataType
     }
 }
