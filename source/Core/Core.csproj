@@ -48,11 +48,11 @@
     <Reference Include="System.Xml" />
     <Reference Include="UCommerce, Version=6.5.3.14346, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\libraries\uCommerce 6.5.3.14346\UCommerce.dll</HintPath>
+      <HintPath>..\..\libraries\uCommerce 6.7.5.15219\UCommerce.dll</HintPath>
     </Reference>
     <Reference Include="UCommerce.Infrastructure, Version=6.5.3.14346, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\libraries\uCommerce 6.5.3.14346\UCommerce.Infrastructure.dll</HintPath>
+      <HintPath>..\..\libraries\uCommerce 6.7.5.15219\UCommerce.Infrastructure.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

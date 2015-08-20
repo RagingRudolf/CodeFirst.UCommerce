@@ -180,11 +180,13 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\UmbracoCms.Core.7.1.4\lib\TidyNet.dll</HintPath>
     </Reference>
-    <Reference Include="UCommerce">
-      <HintPath>..\..\libraries\uCommerce 6.1.0.14195\UCommerce.dll</HintPath>
+    <Reference Include="UCommerce, Version=6.1.0.14195, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libraries\uCommerce 6.7.5.15219\UCommerce.dll</HintPath>
     </Reference>
-    <Reference Include="UCommerce.Infrastructure">
-      <HintPath>..\..\libraries\uCommerce 6.1.0.14195\UCommerce.Infrastructure.dll</HintPath>
+    <Reference Include="UCommerce.Infrastructure, Version=6.1.0.14195, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libraries\uCommerce 6.7.5.15219\UCommerce.Infrastructure.dll</HintPath>
     </Reference>
     <Reference Include="umbraco, Version=1.0.5261.28133, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
