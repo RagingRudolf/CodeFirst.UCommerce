@@ -16,7 +16,7 @@ You can find more information about it [here](http://www.ucommerce.net/ "uCommer
 
 ## Requirements
 
-CodeFirst for uCommerce requires your solution running uCommerce 6.1.0.14195 at this point. 
+CodeFirst for uCommerce requires your solution running uCommerce 6.7.5.15219 at this point. 
 Support for older versions of uCommerce will not officially be supported. 
 But you're welcome to contribute so it can!
 
