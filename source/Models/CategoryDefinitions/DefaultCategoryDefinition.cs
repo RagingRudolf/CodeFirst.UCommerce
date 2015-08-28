@@ -1,14 +1,14 @@
-﻿using RagingRudolf.CodeFirst.UCommerce.Core.Attributes;
-using RagingRudolf.CodeFirst.UCommerce.Core.Attributes.Category;
+﻿using RagingRudolf.UCommerce.CodeFirst.Core;
+using RagingRudolf.UCommerce.CodeFirst.Core.Attributes.Shared;
 
-namespace RagingRudolf.Examples.Models.CategoryDefinitions
+namespace RagingRudolf.UCommerce.CodeFirst.Examples.CategoryDefinitions
 {
-	[CategoryDefinition("Default Category 1", Description = "Description is updated")]
+    [Definition(BuiltInDefinitionType.Category, "Default Category 1", "Description is updated")]
 	public class DefaultCategoryDefinition
 	{
-		[DefinitionField("IsPrimaryCategoryAlt", "Number", Multilingual = true, DisplayOnSite = true, RenderInEditor = true)]
-		[LanguageDescription("en-US", "Primary category", Description = "This is primary category for a product.")]
-		[LanguageDescription("da-DK", "Primær kategori", Description = "Dette er den primære kategori for et produkt.")]
+		[Field("IsPrimaryCategoryAlt", Constants.BuiltInDataTypes.Number, Multilingual = true, DisplayOnSite = true, RenderInEditor = true)]
+		[Language("en-US", "Primary category", Description = "This is primary category for a product.")]
+		[Language("da-DK", "Primær kategori", Description = "Dette er den primære kategori for et produkt.")]
 		public bool IsPrimaryCategory { get; set; }
 	}
 }

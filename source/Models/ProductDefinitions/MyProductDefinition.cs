@@ -1,14 +1,15 @@
-﻿using RagingRudolf.CodeFirst.UCommerce.Core.Attributes;
-using RagingRudolf.CodeFirst.UCommerce.Core.Attributes.Product;
+﻿using RagingRudolf.UCommerce.CodeFirst.Core;
+using RagingRudolf.UCommerce.CodeFirst.Core.Attributes.Product;
+using RagingRudolf.UCommerce.CodeFirst.Core.Attributes.Shared;
 
-namespace RagingRudolf.Examples.Models.ProductDefinitions
+namespace RagingRudolf.UCommerce.CodeFirst.Examples.ProductDefinitions
 {
-	[ProductDefinition("My Product Definition", Description = "My own product description")]
+    [Definition(BuiltInDefinitionType.Product, "My Product Definition", "My own product description")]
 	public class MyProductDefinition
 	{
-		[ProductDefinitionField("Stock", "Number", DisplayOnSite = true, IsVariantProperty = true)]
-		[LanguageDescription("da-DK", "Lager", Description = "Antal enheder på lager.")]
-		[LanguageDescription("en-US", "Stock", Description = "Number of items in stock.")]
+        [ProductField("Stock", Constants.BuiltInDataTypes.Number, DisplayOnSite = true, IsVariantProperty = true)]
+		[Language("da-DK", "Lager", Description = "Antal enheder på lager.")]
+		[Language("en-US", "Stock", Description = "Number of items in stock.")]
 		public int Stock { get; set; }
 	}
 }

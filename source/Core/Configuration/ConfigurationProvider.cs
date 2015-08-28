@@ -1,28 +1,27 @@
 ﻿using System.Configuration;
 using System.IO;
 using System.Reflection;
+using RagingRudolf.UCommerce.CodeFirst.Core.Extensions;
 
-using RagingRudolf.CodeFirst.UCommerce.Core.Extensions;
-
-namespace RagingRudolf.CodeFirst.UCommerce.Core.Configuration
+namespace RagingRudolf.UCommerce.CodeFirst.Core.Configuration
 {
 	public class ConfigurationProvider : IConfigurationProvider
 	{
-		private readonly CodeFirstConfiguration _configuration;
+		private readonly CodeFirstConfigurationSection _configurationSection;
 		
 		public ConfigurationProvider()
 		{
-			_configuration = ConfigurationManager.GetSection("RagingRudolf/CodeFirst") as CodeFirstConfiguration;
+			_configurationSection = ConfigurationManager.GetSection("RagingRudolf/CodeFirst") as CodeFirstConfigurationSection;
 		}
 
 		public Assembly GetAssembly()
 		{
-			if (_configuration == null)
+			if (_configurationSection == null)
 				throw new ConfigurationErrorsException(
 					"Misconfiguration! Could not find ConfigurationSection 'RagingRudolf/CodeFirst' " +
 					"in web.config or app.config. Make sure it has been added and configured.");
 			
-			if (_configuration.AssemblyName.IsEmpty())
+			if (_configurationSection.AssemblyName.IsEmpty())
 				throw new ConfigurationErrorsException(
 					"Misconfiguration! assemblyname attribute for ConfigurationSection 'RagingRudolf/CodeFirst' " +
 					"is not allowed to be null or empty. Make sure to define a valid assembly name.");
@@ -31,10 +30,10 @@ namespace RagingRudolf.CodeFirst.UCommerce.Core.Configuration
 
 			try
 			{
-				assembly = Assembly.Load(_configuration.AssemblyName);
+				assembly = Assembly.Load(_configurationSection.AssemblyName);
 			} catch(FileNotFoundException ex) {
 				throw new ConfigurationErrorsException(
-					string.Format("Misconfiguration! Configured assembly with name '{0}' could not be found.", _configuration.AssemblyName), ex);
+					string.Format("Misconfiguration! Configured assembly with name '{0}' could not be found.", _configurationSection.AssemblyName), ex);
 			}
 
 			return assembly;
@@ -42,7 +41,7 @@ namespace RagingRudolf.CodeFirst.UCommerce.Core.Configuration
 
 		public bool Synchronize
 		{
-			get { return _configuration != null && _configuration.Synchronize; }
+			get { return _configurationSection != null && _configurationSection.Synchronize; }
 		}
 	}
 }

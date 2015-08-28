@@ -1,7 +1,7 @@
-﻿using RagingRudolf.CodeFirst.UCommerce.Core;
+﻿using RagingRudolf.UCommerce.CodeFirst.Core;
 using Umbraco.Core;
 
-namespace RagingRudolf.CodeFirst.UCommerce.Cms.Umbraco
+namespace RagingRudolf.UCommerce.CodeFirst.Cms.Umbraco
 {
 	public class UmbracoEventHandler : ApplicationEventHandler
 	{

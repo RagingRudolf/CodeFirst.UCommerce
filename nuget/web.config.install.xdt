@@ -2,7 +2,7 @@
 <configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
   <configSections xdt:Transform="InsertIfMissing">
     <sectionGroup name="RagingRudolf" xdt:Transform="InsertIfMissing">
-      <section name="CodeFirst" type="RagingRudolf.CodeFirst.UCommerce.Core.Configuration.CodeFirstConfiguration, RagingRudolf.CodeFirst.UCommerce.Core" />
+      <section name="CodeFirst" type="RagingRudolf.UCommerce.CodeFirst.Core.Configuration.CodeFirstConfiguration, RagingRudolf.UCommerce.CodeFirst.Core" />
     </sectionGroup>
   </configSections>
 

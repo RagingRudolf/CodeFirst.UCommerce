@@ -1,8 +1,8 @@
-﻿namespace RagingRudolf.CodeFirst.UCommerce.Core.Attributes
+﻿namespace RagingRudolf.UCommerce.CodeFirst.Core.Attributes.Shared
 {
-	public class BaseDefinitionFieldAttribute : UCommerceAttribute
+	public abstract class BaseDefinitionFieldAttribute : CodeFirstAttribute
 	{
-		public BaseDefinitionFieldAttribute(string name, string dataType) 
+		protected BaseDefinitionFieldAttribute(string name, string dataType) 
 			: base(name)
 		{
 			DataType = dataType;

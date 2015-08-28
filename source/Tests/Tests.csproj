@@ -7,8 +7,8 @@
     <ProjectGuid>{A3CDC85C-6AD8-4172-8F8F-FE41682ADDA2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RagingRudolf.CodeFirst.UCommerce.Tests</RootNamespace>
-    <AssemblyName>RagingRudolf.CodeFirst.UCommerce.Tests</AssemblyName>
+    <RootNamespace>RagingRudolf.UCommerce.CodeFirst.Tests</RootNamespace>
+    <AssemblyName>RagingRudolf.UCommerce.CodeFirst.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -42,7 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\Extensions\StringExtensionsTests.cs" />
+    <Compile Include="Core\Extensions\StringExtensionsTester.cs" />
+    <Compile Include="Core\Extensions\TypeExtensionsTester.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

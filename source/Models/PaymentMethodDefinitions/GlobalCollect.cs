@@ -1,12 +1,12 @@
-﻿using RagingRudolf.CodeFirst.UCommerce.Core.Attributes;
-using RagingRudolf.CodeFirst.UCommerce.Core.Attributes.Payment;
+﻿using RagingRudolf.UCommerce.CodeFirst.Core;
+using RagingRudolf.UCommerce.CodeFirst.Core.Attributes.Shared;
 
-namespace RagingRudolf.Examples.Models.PaymentMethodDefinitions
+namespace RagingRudolf.UCommerce.CodeFirst.Examples.PaymentMethodDefinitions
 {
-	[PaymentMethodDefinition("Global Collect", Description = "My Collect")]
+    [Definition(BuiltInDefinitionType.PaymentMethod, "Global Collect", "My Collect")]
 	public class GlobalCollect
 	{
-		[DefinitionField("Field Test", "Number", DisplayOnSite = true)]
+		[Field("Field Test", Constants.BuiltInDataTypes.Number, DisplayOnSite = true)]
 		public string Test { get; set; }
 	}
 }

@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace RagingRudolf.CodeFirst.UCommerce.Core.Configuration
+namespace RagingRudolf.UCommerce.CodeFirst.Core.Configuration
 {
 	public interface IConfigurationProvider
 	{

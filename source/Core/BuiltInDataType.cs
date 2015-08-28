@@ -1,6 +1,6 @@
-﻿namespace RagingRudolf.CodeFirst.UCommerce.Core
+﻿namespace RagingRudolf.UCommerce.CodeFirst.Core
 {
-	public enum BuiltInDataTypes
+	public enum BuiltInDataType
 	{
 		ShortText,
 		LongText,

@@ -1,13 +1,13 @@
-﻿using RagingRudolf.CodeFirst.UCommerce.Core.Attributes;
-using RagingRudolf.CodeFirst.UCommerce.Core.Attributes.Campaign;
+﻿using RagingRudolf.UCommerce.CodeFirst.Core;
+using RagingRudolf.UCommerce.CodeFirst.Core.Attributes.Shared;
 
-namespace RagingRudolf.Examples.Models.CampaignDefinitions
+namespace RagingRudolf.UCommerce.CodeFirst.Examples.CampaignDefinitions
 {
-	[CampaignDefinition("Super Campaign", Description = "This is a super campaign for awesome on sales item!")]
+    [Definition(BuiltInDefinitionType.CampaignItem, "Super Campaign", "This is a super campaign for awesome on sales item!")]
 	public class SuperCampaign
 	{
-		[DefinitionField("DebitorGroup", "Number", DefaultValue = "1", RenderInEditor = true)]
-		[LanguageDescription("da-DK", "Debitor gruppe",  Description = "Gruppe id'et, som kan modtage denne rabat.")]
+		[Field("DebitorGroup", Constants.BuiltInDataTypes.Number, DefaultValue = "1", RenderInEditor = true)]
+		[Language("da-DK", "Debitor gruppe",  Description = "Gruppe id'et, som kan modtage denne rabat.")]
 		public string DebitorGroup { get; set; }
 	}
 }

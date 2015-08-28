@@ -7,8 +7,8 @@
     <ProjectGuid>{26AC5CE1-D365-483C-B536-B128EC826614}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RagingRudolf.CodeFirst.UCommerce.Core</RootNamespace>
-    <AssemblyName>RagingRudolf.CodeFirst.UCommerce.Core</AssemblyName>
+    <RootNamespace>RagingRudolf.UCommerce.CodeFirst.Core</RootNamespace>
+    <AssemblyName>RagingRudolf.UCommerce.CodeFirst.Core</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -48,48 +48,40 @@
     <Reference Include="System.Xml" />
     <Reference Include="UCommerce, Version=6.5.3.14346, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\libraries\uCommerce 6.5.3.14346\UCommerce.dll</HintPath>
+      <HintPath>..\..\libraries\uCommerce 6.7.5.15219\UCommerce.dll</HintPath>
     </Reference>
     <Reference Include="UCommerce.Infrastructure, Version=6.5.3.14346, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\libraries\uCommerce 6.5.3.14346\UCommerce.Infrastructure.dll</HintPath>
+      <HintPath>..\..\libraries\uCommerce 6.7.5.15219\UCommerce.Infrastructure.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\Shared\DefinitionAttribute.cs" />
+    <Compile Include="Attributes\Shared\FieldAttribute.cs" />
+    <Compile Include="Attributes\Shared\LanguageAttribute.cs" />
+    <Compile Include="Attributes\Product\ProductFieldAttribute.cs" />
+    <Compile Include="Attributes\Shared\CodeFirstAttribute.cs" />
     <Compile Include="Attributes\DataType\DataTypeAttribute.cs" />
     <Compile Include="Attributes\DataType\EnumValueAttribute.cs" />
-    <Compile Include="Attributes\Shared\BaseDefinitionAttribute.cs" />
     <Compile Include="Attributes\Shared\BaseDefinitionFieldAttribute.cs" />
-    <Compile Include="Attributes\Campaign\CampaignDefinitionAttribute.cs" />
-    <Compile Include="Attributes\Category\CategoryDefinitionAttribute.cs" />
-    <Compile Include="Attributes\Shared\DefinitionFieldAttribute.cs" />
-    <Compile Include="Attributes\Shared\LanguageDescriptionAttribute.cs" />
-    <Compile Include="Attributes\Payment\PaymentMethodDefinitionAttribute.cs" />
-    <Compile Include="Attributes\Product\ProductDefinitionAttribute.cs" />
-    <Compile Include="Attributes\Product\ProductDefinitionFieldAttribute.cs" />
-    <Compile Include="Attributes\Shared\UCommerceAttribute.cs" />
-    <Compile Include="BultInDataTypes.cs" />
+    <Compile Include="BuiltInDataType.cs" />
     <Compile Include="CodeFirstBootstrapper.cs" />
-    <Compile Include="Configuration\CodeFirstConfiguration.cs" />
+    <Compile Include="Configuration\CodeFirstConfigurationSection.cs" />
     <Compile Include="Configuration\ConfigurationProvider.cs" />
     <Compile Include="Configuration\IConfigurationProvider.cs" />
     <Compile Include="Constants.cs" />
-    <Compile Include="Extensions\AssemblyExtensions.cs" />
+    <Compile Include="Creators\DataTypeCreator.cs" />
+    <Compile Include="Creators\DefinitionCreator.cs" />
+    <Compile Include="Creators\ICreator.cs" />
+    <Compile Include="Creators\ProductDefinitionCreator.cs" />
     <Compile Include="Extensions\EnumerationExtensions.cs" />
     <Compile Include="Extensions\PropertyInfoExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\TypeExtensions.cs" />
-    <Compile Include="Handlers\BaseDefinitionHandler.cs" />
-    <Compile Include="Handlers\CampaignDefinitionHandler.cs" />
-    <Compile Include="Handlers\CategoryDefinitionHandler.cs" />
-    <Compile Include="Handlers\DataTypeHandler.cs" />
-    <Compile Include="Handlers\DataTypeHandlerBase.cs" />
-    <Compile Include="Handlers\EnumDataTypeHandler.cs" />
-    <Compile Include="Handlers\Handler.cs" />
-    <Compile Include="Handlers\IHandler.cs" />
-    <Compile Include="Handlers\PaymentMethodDefinitionHandler.cs" />
-    <Compile Include="Handlers\ProductDefinitionHandler.cs" />
+    <Compile Include="Factories\DefinitionCreatorFactory.cs" />
+    <Compile Include="Factories\IDefinitionCreatorFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BuiltInDefinitionType.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
