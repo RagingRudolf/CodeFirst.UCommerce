@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>RagingRudolf.UCommerce.CodeFirst.Core</id>
+    <id>RagingRudolf.UCommerce.UCommerce.Core</id>
     <version>$version$</version>
     <title>CodeFirst.UCommerce</title>
     <authors>RagingRudolf</authors>
