@@ -1,1 +1,1 @@
-nuget pack source\Core\Core.csproj
+.\nuget\nuget.exe pack source\Core\Core.csproj
