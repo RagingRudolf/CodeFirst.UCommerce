@@ -30,7 +30,12 @@ You can install it with using Package Manager Console by running command
 
 Or if you are looking at a feature which is not available in nuget yet you can download the source code and compile a version yourself.
 
-If you compile your code yourself you have to reference RagingRudolf.CodeFirst.UCommerce.Core and add the following configuration sections to your web/app.config.
+### AssemblyScan or Configuration by web.config
+
+When you're going to use CodeFirst for uCommerce, you will have to decide whether CodeFirst will look them up by assembly scan or by manually specifying an assembly 
+to look for in a configuration section in web.config.
+
+If you're going with manually specifying an assembly you have to add the following to your web.config
 
 	<sectionGroup name="RagingRudolf">
 		<section name="CodeFirst" type="RagingRudolf.CodeFirst.UCommerce.Core.Configuration.CodeFirstConfiguration" />
@@ -48,18 +53,30 @@ assemblyname: In which assembly should CodeFirst be looking for definitions?
 
 ### Initializing CodeFirst in Umbraco 6/7
 
-Initializing CodeFirst for uCommerce is very easy. Create a new class which inherits from ApplicationEventHandler in Umbraco and call CodeFirstBootstrapper.Initialize() and you're good to go.
-Example:
+Initializing CodeFirst for uCommerce is very easy. Create a new class which inherits from ApplicationEventHandler in Umbraco and 
+call CodeFirstBootstrapper.Initialize() and you're good to go.
+
+Example by using specified assembly:
 
 	public class UmbracoEventHandler : ApplicationEventHandler
 	{
 		protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
 		{
-			CodeFirstBootstrapper.Initialize();
+			new AssemblyByConfigurationBootstrap().Initialize();
 		}
 	}
 
-## My first definition
+Example by using assembly scan:
+
+    	public class UmbracoEventHandler : ApplicationEventHandler
+	    {
+		    protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
+		    {
+			    new AssemblyScanBootstrap().Initialize();
+		    }
+	    }
+
+## Your first definition
 
 Creating definitions with CodeFirst for uCommerce is simple and I will be working on keeping it that way! The basics are that you mark a class with an attribute that you wish should be a definition and mark properties with an attribute as well if you want being created as properties for your definition. In the example below we will create a category definition with a property:
 
@@ -89,10 +106,9 @@ Below can you see how it will look like if we use our code from before.
 
 ## The future
 
-So far the framework support creating category/product/campaign and payment definitions (more specific the newly added payment definition in uCommerce and not payment provider) with fields that can be multilingual or non-multilingual. 
-Creating DataTypes will be next thing in my pipeline. As right now I am aiming for using same approah for creating data types (using attributes). 
-And I will probably work on the Wiki pages so we can get some actual documentation beside of this readme.
+Next thing I plan in my pipeline is better documenation. Documentation is also the hardest part to do. Mostly because it's not creating feature but as a developer myself I know
+that good documentation is important. So I will work on getting some documentation that go more into depths and more real world near examples.
 
-I still like some feedback and if you are missing some features don't hesitate to create an issue with a description of your feature!
+And I might look into performance enhancements but at this point I'm not sure how much gain it will give.
 
 Happy coding!
