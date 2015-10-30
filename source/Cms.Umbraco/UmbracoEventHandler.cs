@@ -1,4 +1,4 @@
-﻿using RagingRudolf.UCommerce.CodeFirst.Core;
+﻿using RagingRudolf.UCommerce.CodeFirst.Core.Bootstrapping;
 using Umbraco.Core;
 
 namespace RagingRudolf.UCommerce.CodeFirst.Cms.Umbraco
@@ -7,7 +7,11 @@ namespace RagingRudolf.UCommerce.CodeFirst.Cms.Umbraco
 	{
 		protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
 		{
-			CodeFirstBootstrapper.Initialize();
+            // Required ConfigurationSection in web.config
+            new AssemblyByConfigurationBootstrap().Initialize();
+
+            // Requires no further configuration
+            new AssemblyScanBootstrap().Initialize();
 		}
 	}
 }

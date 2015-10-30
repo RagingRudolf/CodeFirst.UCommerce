@@ -5,29 +5,22 @@ using RagingRudolf.UCommerce.CodeFirst.Core.Attributes.Shared;
 using RagingRudolf.UCommerce.CodeFirst.Core.Creators;
 using RagingRudolf.UCommerce.CodeFirst.Core.Extensions;
 using UCommerce.EntitiesV2;
-using UCommerce.Infrastructure;
 
 namespace RagingRudolf.UCommerce.CodeFirst.Core.Factories
 {
-    public class DefinitionCreatorFactory : IDefinitionCreatorFactory, IDisposable
+    public class DefinitionCreatorFactory : IDefinitionCreatorFactory
     {
         private readonly ISession _session;
         private readonly IDictionary<BuiltInDefinitionType, ICreator> _definitionCreators; 
 
-        public DefinitionCreatorFactory()
-            : this(ObjectFactory.Instance.Resolve<ISessionProvider>().GetSession())
+        public DefinitionCreatorFactory(ISessionProvider sessionProvider)
         {
-        }
-
-        public DefinitionCreatorFactory(ISession session)
-        {
-            if (session == null) throw new ArgumentNullException("session");
-
-            _session = session;
+            if (sessionProvider == null) throw new ArgumentNullException(nameof(sessionProvider));
+            _session = sessionProvider.GetSession();
             
-            var definitionCreator = new DefinitionCreator(session);
-            var productDefinitionCreator = new ProductDefinitionCreator(session);
-            var dataTypeCreator = new DataTypeCreator(session);
+            var definitionCreator = new DefinitionCreator(_session);
+            var productDefinitionCreator = new ProductDefinitionCreator(_session);
+            var dataTypeCreator = new DataTypeCreator(_session);
 
             _definitionCreators = new Dictionary<BuiltInDefinitionType, ICreator>
             {
