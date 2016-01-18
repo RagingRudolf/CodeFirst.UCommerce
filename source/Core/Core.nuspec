@@ -9,13 +9,8 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>CodeFirst for uCommerce. Eliminate the manual process of creating definitions in uCommerce backend. Simple creation of definitions and easy deployment.</description>
     <releaseNotes>
-      1.0.0-beta:
-      BREAKING CHANGES:
-        CodeFirstBootstrapper has no longer a static Initialize method. Class needs to be instantiated now.
-        Renamed CodeFirstBootstrapper into AssemblyByConfigurationBootstrap.
-      
-      New:
-        Adding a AssemblyScan for finding definitions as an alternative.
+      1.0.1:
+        Definitions are now created during a transaction to protect against corrupting data in case of an exception occurs.
     </releaseNotes>
     <projectUrl>https://github.com/RagingRudolf/CodeFirst.UCommerce</projectUrl>
     <licenseUrl>https://github.com/RagingRudolf/CodeFirst.UCommerce/blob/master/LICENSE.md</licenseUrl>
