@@ -11,13 +11,16 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core.Factories
     public class DefinitionCreatorFactory : IDefinitionCreatorFactory
     {
         private readonly ISession _session;
+        private readonly ITransaction _transaction;
+
         private readonly IDictionary<BuiltInDefinitionType, ICreator> _definitionCreators; 
 
         public DefinitionCreatorFactory(ISessionProvider sessionProvider)
         {
             if (sessionProvider == null) throw new ArgumentNullException(nameof(sessionProvider));
             _session = sessionProvider.GetSession();
-            
+            _transaction = _session.BeginTransaction();
+
             var definitionCreator = new DefinitionCreator(_session);
             var productDefinitionCreator = new ProductDefinitionCreator(_session);
             var dataTypeCreator = new DataTypeCreator(_session);
@@ -32,6 +35,11 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core.Factories
             };
         }
 
+        public void Cancel()
+        {
+            _transaction.Rollback();
+        }
+
         public void Create(Type type)
         {
             var attribute = type.AssertGetAttribute<DefinitionAttribute>();
@@ -39,14 +47,15 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core.Factories
             ICreator definitionCreator;
             if (!_definitionCreators.TryGetValue(attribute.DefinitionType, out definitionCreator))
                 throw new InvalidOperationException(
-                    string.Format("Cannot find any DefinitionCreator for type '{0}'", type.Name));
+                    $"Cannot find any DefinitionCreator for type '{type.Name}'");
 
             definitionCreator.CreateOrUpdate(type);
         }
 
         public void Dispose()
         {
-            _session.Flush();
+            if (!_transaction.WasRolledBack)
+                _transaction.Commit();
         }
     }
 }

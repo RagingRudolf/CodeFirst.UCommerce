@@ -42,8 +42,18 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core.Bootstrapping
 
             using (var factory = new DefinitionCreatorFactory(_sessionProvider))
             {
-                foreach (var type in codeFirstTypes)
-                    factory.Create(type);
+                try
+                {
+                    foreach (var type in codeFirstTypes)
+                        factory.Create(type);
+                }
+                catch (Exception e)
+                {
+                    factory.Cancel();
+
+                    throw new InvalidOperationException(
+                        "An error occured during creation of definitions. Any changes have been rolled back. See inner exception for details.", e);
+                }
             }
         }
     }

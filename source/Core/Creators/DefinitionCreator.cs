@@ -15,7 +15,7 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core.Creators
 
         public DefinitionCreator(ISession session)
         {
-            if (session == null) throw new ArgumentNullException("session");
+            if (session == null) throw new ArgumentNullException(nameof(session));
 
             _session = session;
         }
@@ -117,7 +117,7 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core.Creators
 
                 if (definitionType == null)
                     throw new InvalidOperationException(
-                        string.Format("Could not find definition type '{0}'", definitionTypeName));
+                        $"Could not find definition type '{definitionTypeName}'");
 
                 definition = new Definition
                 {

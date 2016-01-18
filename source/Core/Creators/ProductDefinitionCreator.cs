@@ -16,7 +16,7 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core.Creators
 
         public ProductDefinitionCreator(ISession session)
         {
-            if (session == null) throw new ArgumentNullException("session");
+            if (session == null) throw new ArgumentNullException(nameof(session));
             
             _session = session;
         }

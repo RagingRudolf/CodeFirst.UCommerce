@@ -12,9 +12,7 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core.Extensions
 
 			if (attribute == null)
 				throw new InvalidOperationException(
-					string.Format("Property '{0}' doesn't have attribute of type '{1}' attached.", 
-						propertyInfo.Name, 
-						typeof(TAttribute).Name));
+				    $"Property '{propertyInfo.Name}' doesn't have attribute of type '{typeof (TAttribute).Name}' attached.");
 
 			return attribute;
 		}

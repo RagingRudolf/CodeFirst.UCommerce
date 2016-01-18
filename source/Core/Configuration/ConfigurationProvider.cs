@@ -33,7 +33,7 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core.Configuration
 				assembly = Assembly.Load(_configurationSection.AssemblyName);
 			} catch(FileNotFoundException ex) {
 				throw new ConfigurationErrorsException(
-					string.Format("Misconfiguration! Configured assembly with name '{0}' could not be found.", _configurationSection.AssemblyName), ex);
+				    $"Misconfiguration! Configured assembly with name '{_configurationSection.AssemblyName}' could not be found.", ex);
 			}
 
 			return assembly;

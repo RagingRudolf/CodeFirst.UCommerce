@@ -14,9 +14,7 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core.Extensions
 
 			if (attribute == null)
 				throw new InvalidOperationException(
-					string.Format("Type '{0}' does not have an attribute of type '{1}' attached.", 
-						definitionType.Name, 
-						typeof(TAttribute).Name));
+				    $"Type '{definitionType.Name}' does not have an attribute of type '{typeof (TAttribute).Name}' attached.");
 
 			return attribute;
 		}
