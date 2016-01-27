@@ -9,12 +9,12 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>CodeFirst for uCommerce. Eliminate the manual process of creating definitions in uCommerce backend. Simple creation of definitions and easy deployment.</description>
     <releaseNotes>
-      1.0.1:
-        Definitions are now created during a transaction to protect against corrupting data in case of an exception occurs.
+      1.0.2:
+        Better error handling during assembly scan to prevent crashing websites.
     </releaseNotes>
     <projectUrl>https://github.com/RagingRudolf/CodeFirst.UCommerce</projectUrl>
     <licenseUrl>https://github.com/RagingRudolf/CodeFirst.UCommerce/blob/master/LICENSE.md</licenseUrl>
-    <copyright>Copyright 2015</copyright>
+    <copyright>Copyright 2015-2016</copyright>
     <tags>codefirst ucommerce</tags>
   </metadata>
 </package>
