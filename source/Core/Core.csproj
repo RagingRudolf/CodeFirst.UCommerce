@@ -75,6 +75,7 @@
     <Compile Include="Creators\DefinitionCreator.cs" />
     <Compile Include="Creators\ICreator.cs" />
     <Compile Include="Creators\ProductDefinitionCreator.cs" />
+    <Compile Include="Extensions\AssemblyExtensions.cs" />
     <Compile Include="Extensions\EnumerationExtensions.cs" />
     <Compile Include="Extensions\PropertyInfoExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />

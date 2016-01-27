@@ -17,6 +17,7 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core.Bootstrapping
         public AssemblyScanBootstrap(ISessionProvider sessionProvider)
         {
             if (sessionProvider == null) throw new ArgumentNullException(nameof(sessionProvider));
+
             _sessionProvider = sessionProvider;
         }
 
@@ -32,7 +33,7 @@ namespace RagingRudolf.UCommerce.CodeFirst.Core.Bootstrapping
 
             foreach (Assembly assembly in assemblies)
             {
-                IEnumerable<Type> types = assembly.GetTypes()
+                IEnumerable<Type> types = assembly.GetLoadableTypes()
                     .EmptyIfNull()
                     .WithAttribute<CodeFirstAttribute>()
                     .ToList();
