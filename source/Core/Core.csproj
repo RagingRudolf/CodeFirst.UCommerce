@@ -46,13 +46,33 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="UCommerce, Version=6.9.0.15323, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\libraries\uCommerce 7.0.0.16029\UCommerce.dll</HintPath>
+    <Reference Include="UCommerce, Version=7.0.5.16060, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\uCommerce.Core.7.0.5.16060\lib\net400\UCommerce.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="UCommerce.Infrastructure, Version=6.9.0.15323, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\libraries\uCommerce 7.0.0.16029\UCommerce.Infrastructure.dll</HintPath>
+    <Reference Include="UCommerce.Admin, Version=7.0.5.16060, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\uCommerce.Core.7.0.5.16060\lib\net400\UCommerce.Admin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UCommerce.Infrastructure, Version=7.0.5.16060, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\uCommerce.Core.7.0.5.16060\lib\net400\UCommerce.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UCommerce.Pipelines, Version=7.0.5.16060, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\uCommerce.Core.7.0.5.16060\lib\net400\UCommerce.Pipelines.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UCommerce.Presentation, Version=7.0.5.16060, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\uCommerce.Core.7.0.5.16060\lib\net400\UCommerce.Presentation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UCommerce.Transactions.Payments, Version=7.0.5.16060, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\uCommerce.Core.7.0.5.16060\lib\net400\UCommerce.Transactions.Payments.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UCommerce.Web.Api, Version=7.0.5.16060, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\uCommerce.Core.7.0.5.16060\lib\net400\UCommerce.Web.Api.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
